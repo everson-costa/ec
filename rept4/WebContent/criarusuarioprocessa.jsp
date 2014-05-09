@@ -47,12 +47,12 @@
 
             //trata sexo - trata sexo - trata sexo - trata sexo - trata sexo - trata sexo - trata sexo - 
 
-// System.out.println(nome);
-// System.out.println(sexo);
-// System.out.println(nacionalidade);
-// System.out.println(perfil);
-// System.out.println(aniversario);
-// System.out.println(estcivil);
+System.out.println(nome);
+System.out.println(sexo);
+System.out.println(nacionalidade);
+System.out.println(perfil);
+System.out.println(aniversario);
+System.out.println(estcivil);
             
             
             
