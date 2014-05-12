@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>REPUTATION!!!</title>
+        <title>rept4!</title>
     </head>
     <body>
         <%
@@ -54,8 +54,6 @@ System.out.println(perfil);
 System.out.println(aniversario);
 System.out.println(estcivil);
             
-            
-            
 //             if(sexo.equalsIgnoreCase("male")){
             	
 //             	 if (nacionalidade.equals("pt_BR")) {
@@ -71,7 +69,6 @@ System.out.println(estcivil);
 //      				estcivil = "Namorando";
 //      				}
             	
-            	
 //             }else{
             	
 //             	 if (nacionalidade.equals("pt_BR")) {
@@ -86,13 +83,10 @@ System.out.println(estcivil);
 // 	         		}else if(estcivil.equalsIgnoreCase("In a relationship")){
 // 	     			estcivil = "Namorando";
 // 	     			}
-            	
 //             }
             
         %>
         <h1>Dados obtidos:</h1><br/>
-
-
 
         <table border="1">
             <tr>
@@ -117,7 +111,7 @@ System.out.println(estcivil);
                 <td>STATUS DE RELACIONAMENTO:    </td><td><%=estcivil%></td>
             </tr>            
             <tr>
-                <td>       LINK DO PERFIL (Facebook):       </td><td><a href="<%=perfil%>" title="clique para acessar o perfil de <%=nome%>" target="_blank"><%=perfil%></a></td>
+                <td>LINK DO PERFIL (Facebook):</td><td><a href="<%=perfil%>" title="clique para acessar o perfil de <%=nome%>" target="_blank"><%=perfil%></a></td>
             </tr>
             <tr>
                 <td>Foto do perfil:</td><td><img title="<%=nome%>" src="http://graph.facebook.com/<%=id%>/picture?type=large"/></td>

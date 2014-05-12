@@ -7,10 +7,25 @@
     <title>rept!</title>  
     </head>  
     <body>
-    <a href="index.jsp" title="Página Inicial">rept!</a><br/><br/>
+    <a href="<%=request.getContextPath()%>/home" title="Página Inicial">rept!</a><br/><br/>
       
        <h3>Inserir usuário no rept!</h3>     
        <form action="EnviarDados?cmd=cadastrar" method="post">  
+         
+          ID (): <input type="text" name="usuario_id_fb" />  
+          <br />
+          Nome do Usuário (): <input type="text" name="usuario_nome_fb" />  
+          <br />
+          Username (): <input type="text" name="usuario_username_fb" />
+          <br /><br />  
+          <input type="submit" value="Cadastrar Pessoa" />  
+            
+       </form>
+       <a href="<%=request.getContextPath()%>/criar">criar</a>  
+       <br /><br />  
+       ${msg}<br/><br/>
+       pesquisar usuarios:
+        <form action="EnviarDados?cmd=cadastrar" method="post">  
          
           ID (Facebook): <input type="text" name="usuario_id_fb" />  
           <br />
@@ -20,10 +35,7 @@
           <br /><br />  
           <input type="submit" value="Cadastrar Pessoa" />  
             
-       </form>
-       <a href="criarusuariohome.jsp">cria</a>  
-       <br /><br />  
-       ${msg}     
+       </form>      
     </body>  
     </html>
 <!--   teste 2nd commit em master   -->

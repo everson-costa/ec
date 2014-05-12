@@ -1,14 +1,12 @@
 package model;
 
 public class Usuario {
-//	private int usuario_id;
 	private String usuario_id_fb;
 	private String usuario_nome_fb;
 	private String usuario_username_fb;
 
 	public Usuario(String usuario_id_fb,String usuario_nome_fb,String usuario_username_fb) {
 		super();
-//		this.usuario_id = usuario_id;
 		this.usuario_id_fb = usuario_id_fb;
 		this.usuario_nome_fb = usuario_nome_fb;
 		this.usuario_username_fb = usuario_username_fb;
@@ -21,7 +19,7 @@ public class Usuario {
 //	public int getUsuario_id() {
 //		return usuario_id;
 //	}
-//
+
 //	public void setUsuario_id(int usuario_id) {
 //		this.usuario_id = usuario_id;
 //	}

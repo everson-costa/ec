@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app 
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    version="3.0">
+	<servlet>
+		<servlet-name>home</servlet-name>
+		<jsp-file>/WEB-INF/jsps/index.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+  		<servlet-name>home</servlet-name>
+  		<url-pattern>/home</url-pattern> <!-- Use this URL -->
+  	</servlet-mapping>
+	<servlet>
+		<servlet-name>criar</servlet-name>
+		<jsp-file>/WEB-INF/jsps/criarusuariohome.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+  		<servlet-name>criar</servlet-name>
+  		<url-pattern>/criar</url-pattern> <!-- Use this URL -->
+  	</servlet-mapping>
+  	<servlet>
+		<servlet-name>criarp</servlet-name>
+		<jsp-file>/WEB-INF/jsps/criarusuarioprocessa.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+  		<servlet-name>criarp</servlet-name>
+  		<url-pattern>/criarp</url-pattern> <!-- Use this URL -->
+  	</servlet-mapping>
+</web-app>

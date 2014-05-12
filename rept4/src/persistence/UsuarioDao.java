@@ -1,5 +1,12 @@
 package persistence;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.mysql.jdbc.ResultSet;
+import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
+
 import model.Usuario;
 
 public class UsuarioDao extends Dao{
@@ -16,7 +23,52 @@ public class UsuarioDao extends Dao{
 	        
 	      stmt.execute();        
 	      close();        
-	   }     
+	   }
+	
+	public ArrayList<Usuario> cnt(String cntusuario) throws Exception{
+		
+		open();
 
+		 String sql = "SELECT usuario_if_fb FROM produto WHERE usuario=?";
+
+		 PreparedStatement  pstmt = con.prepareStatement(sql);
+		 pstmt.setString(1, cntusuario);
+
+		 Usuario u = null;
+		 ArrayList<Usuario> listaUsuarios = new ArrayList<Usuario>();
+		 stmt.executeQuery();
+
+		 while(rs.next()){
+		  u = new Usuario();
+		  u.setUsuario_id_fb(rs.getString("usuario_id_fb")); //Para isso, terá que criar o método na classe Produto
+		  listaUsuarios.add(u);
+		 }
+		 
+		 return listaUsuarios;
+		}
+	
+	public List listaUsuario() {
+		
+        try {
+        	
+        	 open();
+    		List usuarios = new ArrayList();
+        	
+            String sql = "SELECT * FROM usuario";
+           
+           stmt = con.prepareStatement(sql);
+           rs = stmt.executeQuery();
+            
+            while (rs.next()) {
+                Usuario umusuario = new Usuario();
+                umusuario.setUsuario_nome_fb((rs.getString("nome_usuario_fb")));
+               usuarios.add(umusuario);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return usuarios;
+    }
 
 }

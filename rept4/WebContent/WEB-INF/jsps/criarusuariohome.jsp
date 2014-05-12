@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Reputeichon</title>
+        <title>rept4!</title>
 
     </head>
     <body>
@@ -27,11 +27,11 @@
             </tr>
             <tr>
                 <td>
-                    <a href="criarusuariohome.jsp" title="página inicial"><h1>REPUTEICHON V10</h1></a><br/>
+                    <a href="<%=request.getContextPath()%>/home" title="página inicial"><h1>REPUTEICHON V10</h1></a><br/>
                         <table border="1">
                         <tr>
                             <td>
-                                <form id="fomu" method="post" action="criarusuarioprocessa.jsp">
+                                <form id="fomu" method="post" action="<%=request.getContextPath()%>/criarp" >
                                     <legend>Cole em baixo o nome de um usuário:</legend><p/>
                                     <a href="#" onclick="ajuda_nome_user();" title="dúvidas sobre o nome de usuário?"><h6>o que é o nome de usuário?</h6></a>
                                     username: <input  type="text" id="username" name="username"/>
