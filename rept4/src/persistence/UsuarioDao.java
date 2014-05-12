@@ -47,28 +47,5 @@ public class UsuarioDao extends Dao{
 		 return listaUsuarios;
 		}
 	
-	public List listaUsuario() {
-		
-        try {
-        	
-        	 open();
-    		List usuarios = new ArrayList();
-        	
-            String sql = "SELECT * FROM usuario";
-           
-           stmt = con.prepareStatement(sql);
-           rs = stmt.executeQuery();
-            
-            while (rs.next()) {
-                Usuario umusuario = new Usuario();
-                umusuario.setUsuario_nome_fb((rs.getString("nome_usuario_fb")));
-               usuarios.add(umusuario);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return usuarios;
-    }
-
+	
 }
