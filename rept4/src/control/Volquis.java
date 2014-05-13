@@ -6,7 +6,8 @@ public class Volquis {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-
+	
+	
 
 	int pAno = 0;
 	int pDia = 0;
@@ -14,7 +15,7 @@ public class Volquis {
 	int menorPdia = 0;
 	
 	
-		
+	
 	}
 
 }
