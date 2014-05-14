@@ -28,4 +28,16 @@
   		<servlet-name>criarp</servlet-name>
   		<url-pattern>/criarp</url-pattern> <!-- Use this URL -->
   	</servlet-mapping>
+  	<servlet>
+		<servlet-name>pesquisa</servlet-name>
+		<jsp-file>/WEB-INF/jsps/consulta.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+  		<servlet-name>pesquisa</servlet-name>
+  		<url-pattern>/pesquisa</url-pattern> <!-- Use this URL -->
+  	</servlet-mapping>
+  	<servlet>
+		<servlet-name>UserControle</servlet-name>
+		<servlet-class>control.CntUser</servlet-class>
+	</servlet>
 </web-app>
