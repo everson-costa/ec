@@ -9,9 +9,7 @@
 <body>
     <a href="<%=request.getContextPath()%>/home" title="Página Inicial">rept!</a><br/><br/>
 
-mostrou?
-
-
+daods?
     <table border=1>
         <thead>
             <tr>
