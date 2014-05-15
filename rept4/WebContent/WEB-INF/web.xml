@@ -36,8 +36,4 @@
   		<servlet-name>pesquisa</servlet-name>
   		<url-pattern>/pesquisa</url-pattern> <!-- Use this URL -->
   	</servlet-mapping>
-  	<servlet>
-		<servlet-name>UserControle</servlet-name>
-		<servlet-class>control.CntUser</servlet-class>
-	</servlet>
 </web-app>

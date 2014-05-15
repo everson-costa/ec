@@ -14,20 +14,18 @@ import persistence.UsuarioDao;
 @WebServlet("/CntUser")
 public class CntUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private UsuarioDao dao;
+	//private UsuarioDao dao;
 
 	public CntUser() {
 		super();
-		dao = new UsuarioDao();
+		
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {  
 	
-//		 String forward="";
-//	        String action = request.getParameter("action");
-		
 				try {
-					request.setAttribute("usuario_id_fb", dao.listar());
+					UsuarioDao usdao = new UsuarioDao();
+					request.setAttribute("usuario_nome_fb", usdao.listar());
 					RequestDispatcher rd = getServletContext().getRequestDispatcher("WEB-INF/jsps/consulta.jsp");
 					rd.forward(request, response);
 				} catch (Exception e) {
@@ -38,8 +36,6 @@ public class CntUser extends HttpServlet {
 	  
 	   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {  
 	      try{ 
-
-		
 
 	      }catch (Exception e) {  
 	          request.setAttribute("msg", "Erro: " + e.getMessage());  

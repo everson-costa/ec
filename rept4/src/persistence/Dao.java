@@ -16,8 +16,10 @@ public class Dao {
 	private final String PASS = "";
 
 	protected void open()throws Exception{  
-	      Class.forName("com.mysql.jdbc.Driver");  
-	      con = DriverManager.getConnection(URL, USER, PASS);  
+	      Class.forName("com.mysql.jdbc.Driver");
+	      con = DriverManager.getConnection(URL, USER, PASS);
+	      //stmt.executeQuery(sql);
+	      
 	   }  
 	     
 	   protected void close()throws Exception{  
