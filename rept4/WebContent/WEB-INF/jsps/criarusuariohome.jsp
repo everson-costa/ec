@@ -27,7 +27,7 @@
             </tr>
             <tr>
                 <td>
-                    <a href="<%=request.getContextPath()%>/home" title="página inicial"><h1>REPUTEICHON V10</h1></a><br/>
+                    <a href="<%=request.getContextPath()%>/home" title="página inicial"><h1>rept!4</h1></a><br/>
                         <table border="1">
                         <tr>
                             <td>

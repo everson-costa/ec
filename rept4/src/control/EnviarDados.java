@@ -27,18 +27,18 @@ public class EnviarDados extends HttpServlet {
 
 			String cmd = request.getParameter("cmd");
 			Usuario u;
-			UsuarioDao pd;
+			UsuarioDao usdao;
 
 			if (cmd.equalsIgnoreCase("cadastrar")) {
 				
-				String id_fb = request.getParameter("usuario_id_fb");
+				//String id_fb = request.getParameter("usuario_id_fb");
 				String nome_fb = request.getParameter("usuario_nome_fb");
-				String username_fb = request.getParameter("usuario_username_fb");
+				//String username_fb = request.getParameter("usuario_username_fb");
 				
-				u = new Usuario(id_fb, nome_fb, username_fb);
+				u = new Usuario();
 
-				pd = new UsuarioDao();
-				pd.create(u);
+				usdao = new UsuarioDao();
+				usdao.create(u);
 
 				request.setAttribute("msg", "Usuário: ["+nome_fb+"] criado com sucesso! \\o/ ");
 				request.getRequestDispatcher("WEB-INF/jsps/index.jsp").forward(request,response);
