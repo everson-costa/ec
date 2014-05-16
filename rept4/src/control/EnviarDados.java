@@ -35,7 +35,7 @@ public class EnviarDados extends HttpServlet {
 				String nome_fb = request.getParameter("usuario_nome_fb");
 				//String username_fb = request.getParameter("usuario_username_fb");
 				
-				u = new Usuario();
+				u = new Usuario(nome_fb);
 
 				usdao = new UsuarioDao();
 				usdao.create(u);

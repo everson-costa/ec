@@ -8,20 +8,19 @@
 <title>pesquisa de usuarios</title>
 </head>
 <body>
-    <a href="<%=request.getContextPath()%>/home" title="Pagina Inicial">rept!</a><br/><br/>
+<a href="<%=request.getContextPath()%>/home" title="Pagina Inicial">rept!</a><br/><br/>
 
 <jsp:useBean id="dao" class="persistence.UsuarioDao"></jsp:useBean>
-<jsp:useBean id="usuario" class="model.Usuario"></jsp:useBean>
-
+<%-- <jsp:useBean id="usuario" class="model.Usuario"></jsp:useBean> --%>
 
 	<form name="view" action="<%=request.getContextPath()%>/CntUser" method="get">
 		<table border="1">
 			<tr>
 				<td>nome</td>
 			</tr>
-			<c:forEach var="usu" items="${usuarios}">
+			<c:forEach var="usu" items="${usuario_nome_fb}">
 				<tr>
-					<td>${usu.usuario_nome_fb}</td>
+					<td>${usu}</td>
 				</tr>
 			</c:forEach>
 		</table>

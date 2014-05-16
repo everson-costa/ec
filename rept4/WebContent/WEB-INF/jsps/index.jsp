@@ -15,7 +15,7 @@
          
           ID (): <input type="text" name="usuario_id_fb" />  
           <br />
-          Nome do Usuário (): <input type="text" name="usuario_nome_fb" />  
+          Nome do Usuário (): <input type="text" name="usuario_nome_fb" id="usuario_nome_fb" />  
           <br />
           Username (): <input type="text" name="usuario_username_fb" />
           <br /><br />  
