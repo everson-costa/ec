@@ -26,6 +26,7 @@ public class CntUser extends HttpServlet {
 				try {
 					UsuarioDao usdao = new UsuarioDao();
 					request.setAttribute("usuario_nome_fb", usdao.listar());
+					request.setAttribute("usuario_id_fb", usdao.listar());
 					RequestDispatcher view = request.getRequestDispatcher("WEB-INF/jsps/consulta.jsp");
 					view.forward(request, response);
 					

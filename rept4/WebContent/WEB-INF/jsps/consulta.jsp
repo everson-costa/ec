@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="ISO-8859-1"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -8,23 +9,28 @@
 <title>pesquisa de usuarios</title>
 </head>
 <body>
-<a href="<%=request.getContextPath()%>/home" title="Pagina Inicial">rept!</a><br/><br/>
+	<a href="<%=request.getContextPath()%>/home" title="Pagina Inicial">rept!</a>
+	<br />
+	<br />
 
-<jsp:useBean id="dao" class="persistence.UsuarioDao"></jsp:useBean>
-<%-- <jsp:useBean id="usuario" class="model.Usuario"></jsp:useBean> --%>
+	<jsp:useBean id="dao" class="persistence.UsuarioDao"></jsp:useBean>
+	<%-- <jsp:useBean id="usuario" class="model.Usuario"></jsp:useBean> --%>
 
-	<form name="view" action="<%=request.getContextPath()%>/CntUser" method="get">
+	<form name="view" action="<%=request.getContextPath()%>/CntUser"
+		method="get">
 		<table border="1">
 			<tr>
+				<td>id</td>
 				<td>nome</td>
 			</tr>
 			<c:forEach items="${usuario_nome_fb}" var="usu">
 				<tr>
+					<td>${usu.usuario_id_fb}</td>
 					<td>${usu.usuario_nome_fb}</td>
 				</tr>
 			</c:forEach>
 		</table>
-		<input type="submit" value="listar"/>
+		<input type="submit" value="listar" />
 	</form>
 </body>
 </html>

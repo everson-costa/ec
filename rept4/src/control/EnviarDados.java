@@ -31,11 +31,11 @@ public class EnviarDados extends HttpServlet {
 
 			if (cmd.equalsIgnoreCase("cadastrar")) {
 				
-				//String id_ = request.getParameter("usuario_id_fb");
+				String usidfb = request.getParameter("usuario_id_fb");
 				String nome_fb = request.getParameter("usuario_nome_fb");
 				//String username_fb = request.getParameter("usuario_username_fb");
 				
-				u = new Usuario(nome_fb);
+				u = new Usuario(usidfb, nome_fb);
 				usdao = new UsuarioDao();
 				
 				usdao.create(u);
