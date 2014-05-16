@@ -18,13 +18,13 @@
 			<tr>
 				<td>nome</td>
 			</tr>
-			<c:forEach var="usu" items="${usuario_nome_fb}">
+			<c:forEach items="${usuario_nome_fb}" var="usu">
 				<tr>
-					<td>${usu}</td>
+					<td>${usu.usuario_nome_fb}</td>
 				</tr>
 			</c:forEach>
 		</table>
-		<input type="submit" value="li"/>
+		<input type="submit" value="listar"/>
 	</form>
 </body>
 </html>

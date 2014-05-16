@@ -26,8 +26,11 @@ public class CntUser extends HttpServlet {
 				try {
 					UsuarioDao usdao = new UsuarioDao();
 					request.setAttribute("usuario_nome_fb", usdao.listar());
-					RequestDispatcher rd = getServletContext().getRequestDispatcher("WEB-INF/jsps/consulta.jsp");
-					rd.forward(request, response);
+					RequestDispatcher view = request.getRequestDispatcher("WEB-INF/jsps/consulta.jsp");
+					view.forward(request, response);
+					
+					 //RequestDispatcher view = request.getRequestDispatcher("DemoJSP.jsp");
+				       // view.forward(request, response);
 				} catch (Exception e) {
 					request.setAttribute("msg", "Erro: " + e.getMessage());  
 					request.getRequestDispatcher("WEB-INF/jsps/consulta.jsp").forward(request,response);  

@@ -27,19 +27,23 @@ public class UsuarioDao extends Dao {
 		List<Usuario> usuarios = new ArrayList<Usuario>();
 		try {
 			open();
-			String sql = "SELECT usuario_nome_fb FROM usuario";
+			String sql = "SELECT usuario_nome_fb FROM usuario;";
 			//con.createStatement();
 			pstmt = con.prepareStatement(sql);
-			//pstmt.setString(1,"");
+			//pstmt.setString(0, "Seixiane Nakashima");
 			pstmt.execute();
 			
 			rs = pstmt.getResultSet();
 
 			while (rs.next()) {
 				Usuario user = new Usuario();
-				user.setUsuario_nome_fb(rs.getString("usuario_nome_fb"));
+				String nome = rs.getString("usuario_nome_fb");
+				//user.setUsuario_nome_fb(rs.getString("usuario_nome_fb"));
+				user.setUsuario_nome_fb(nome);
+				//System.out.print(rs.getString("usuario_nome_fb"));
+				//System.out.print(nome);
 				usuarios.add(user);
-				// System.out.println("entrou aqui");
+				//System.out.println("entrou aqui"+usuarios);
 			}
 
 		} catch (SQLException e) {
