@@ -5,7 +5,7 @@
 <%@ page import="com.restfb.*"%>
 <%@page import="com.restfb.types.*" %>
 <%@page import="com.restfb.DefaultFacebookClient" %>
-
+<%@page import="model.Usuario" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -35,7 +35,7 @@
           
            
 	        String id = usuario.getId();
-//          nomedeusuario = usuario.getUsername();
+			String username = usuario.getUsername();
             String nome = usuario.getName();
             String sexo = usuario.getGender();
             String nacionalidade = usuario.getLocale();
@@ -48,6 +48,7 @@
             //trata sexo - trata sexo - trata sexo - trata sexo - trata sexo - trata sexo - trata sexo - 
 
 System.out.println(nome);
+System.out.println(username);
 System.out.println(sexo);
 System.out.println(nacionalidade);
 System.out.println(perfil);
@@ -117,5 +118,25 @@ System.out.println(estcivil);
                 <td>Foto do perfil:</td><td><img title="<%=nome%>" src="http://graph.facebook.com/<%=id%>/picture?type=large"/></td>
             </tr> 
         </table>
+        <br/>
+         <form action="EnviarDados?cmd=cadastrar" method="post">  
+         
+          ID ():
+          <input type="text" name="idfb" id="idfb" value="<%=id%>" readonly="readonly"/>
+          <input type="hidden" name="usuario_id_fb" id="usuario_id_fb" value="<%=id%>" readonly="readonly"/>  
+          <br />
+          Nome do Usuário ():
+          <input type="text" name="nome" id="nome" value="<%=nome%>" readonly="readonly"/>  
+          <input type="hidden" name="usuario_nome_fb" id="usuario_nome_fb" value="<%=nome%>" readonly="readonly"/>
+          <br />
+          Username ():
+          <input type="text" name="username" id="username" value="<%=username%>" readonly="readonly" />
+          <input type="hidden" name="usuario_username_fb" id="usuario_username_fb" value="<%=username%>" readonly="readonly" />
+          
+          <br /><br />
+            
+          <input type="submit" value="Cadastrar Perfil" />
+            
+       </form>
 </body>
 </html>

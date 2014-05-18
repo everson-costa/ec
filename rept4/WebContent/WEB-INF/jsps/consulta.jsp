@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>pesquisa de usuarios</title>
+<title>Listar perfis</title>
 </head>
 <body>
 	<a href="<%=request.getContextPath()%>/home" title="Pagina Inicial">rept!</a>
@@ -14,7 +14,6 @@
 	<br />
 
 	<jsp:useBean id="dao" class="persistence.UsuarioDao"></jsp:useBean>
-	<%-- <jsp:useBean id="usuario" class="model.Usuario"></jsp:useBean> --%>
 
 	<form name="view" action="<%=request.getContextPath()%>/CntUser"
 		method="get">
@@ -22,11 +21,13 @@
 			<tr>
 				<td>id</td>
 				<td>nome</td>
+				<td>username</td>
 			</tr>
 			<c:forEach items="${usuario_nome_fb}" var="usu">
 				<tr>
 					<td>${usu.usuario_id_fb}</td>
 					<td>${usu.usuario_nome_fb}</td>
+					<td>${usu.usuario_username_fb}</td>
 				</tr>
 			</c:forEach>
 		</table>
