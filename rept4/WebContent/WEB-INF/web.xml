@@ -36,4 +36,12 @@
   		<servlet-name>pesquisa</servlet-name>
   		<url-pattern>/pesquisa</url-pattern> <!-- Use this URL -->
   	</servlet-mapping>
+  	  	<servlet>
+		<servlet-name>processamento</servlet-name>
+		<jsp-file>/WEB-INF/jsps/processacriacao.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+  		<servlet-name>processamento</servlet-name>
+  		<url-pattern>/processamento</url-pattern> <!-- Use this URL -->
+  	</servlet-mapping>
 </web-app>

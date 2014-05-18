@@ -112,31 +112,40 @@ System.out.println(estcivil);
                 <td>STATUS DE RELACIONAMENTO:    </td><td><%=estcivil%></td>
             </tr>            
             <tr>
-                <td>LINK DO PERFIL (Facebook):</td><td><a href="<%=perfil%>" title="clique para acessar o perfil de <%=nome%>" target="_blank"><%=perfil%></a></td>
+                <td>LINK DO PERFIL ():</td><td><a href="<%=perfil%>" title="clique para acessar o perfil de <%=nome%>" target="_blank"><%=perfil%></a></td>
             </tr>
             <tr>
                 <td>Foto do perfil:</td><td><img title="<%=nome%>" src="http://graph.facebook.com/<%=id%>/picture?type=large"/></td>
             </tr> 
         </table>
         <br/>
-         <form action="EnviarDados?cmd=cadastrar" method="post">  
+<!--          <form action="EnviarDados?cmd=cadastrar" method="post">   -->
          
-          ID ():
-          <input type="text" name="idfb" id="idfb" value="<%=id%>" readonly="readonly"/>
-          <input type="hidden" name="usuario_id_fb" id="usuario_id_fb" value="<%=id%>" readonly="readonly"/>  
-          <br />
-          Nome do Usuário ():
-          <input type="text" name="nome" id="nome" value="<%=nome%>" readonly="readonly"/>  
-          <input type="hidden" name="usuario_nome_fb" id="usuario_nome_fb" value="<%=nome%>" readonly="readonly"/>
-          <br />
-          Username ():
-          <input type="text" name="username" id="username" value="<%=username%>" readonly="readonly" />
-          <input type="hidden" name="usuario_username_fb" id="usuario_username_fb" value="<%=username%>" readonly="readonly" />
+<!--           ID (): -->
+<%--           <input type="text" name="idfb" id="idfb" value="<%=id%>" readonly="readonly"/> --%>
+<%--           <input type="hidden" name="usuario_id_fb" id="usuario_id_fb" value="<%=id%>" readonly="readonly"/>   --%>
+<!--           <br /> -->
+<!--           Nome do Usuário (): -->
+<%--           <input type="text" name="nome" id="nome" value="<%=nome%>" readonly="readonly"/>   --%>
+<%--           <input type="hidden" name="usuario_nome_fb" id="usuario_nome_fb" value="<%=nome%>" readonly="readonly"/> --%>
+<!--           <br /> -->
+<!--           Username (): -->
+<%--           <input type="text" name="username" id="username" value="<%=username%>" readonly="readonly" /> --%>
+<%--           <input type="hidden" name="usuario_username_fb" id="usuario_username_fb" value="<%=username%>" readonly="readonly" /> --%>
           
-          <br /><br />
+<!--           <br /><br /> -->
             
-          <input type="submit" value="Cadastrar Perfil" />
-            
-       </form>
+<!--           <input type="submit" value="Cadastrar Perfil" /> -->
+<!--           </form> -->
+           <br/>
+           
+           
+           <form action="<%=request.getContextPath()%>/processamento?par=<%=username%>" method="post">
+           
+           <input type="submit" value="ok"/> 
+           </form>
+           
+                 
+      
 </body>
 </html>
