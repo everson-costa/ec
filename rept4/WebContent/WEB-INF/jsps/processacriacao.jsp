@@ -12,6 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>rept4! processa criacao de perfil</title>
+        
         <script type="text/javascript">
         window.onload = function(){
         	  document.forms['formcria'].submit();

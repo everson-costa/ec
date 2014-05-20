@@ -8,8 +8,20 @@
 
     </head>
     <body>
-   
-                <script type="text/javascript">(function(d, s, id) {
+	<script type="text/javascript">
+		function validaform() {
+			var urlinformada=document.forms["fomu"]["username"].value;
+			if (urlinformada== "" || x== null) {
+				alert("você deve informar uma URL com username válido.");
+				return false;
+			}else{
+				return true;
+			}
+		}
+	</script>
+
+
+	<script type="text/javascript">(function(d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
                 if (d.getElementById(id))
                     return;
@@ -31,7 +43,7 @@
                         <table border="1">
                         <tr>
                             <td>
-                                <form id="fomu" method="post" action="<%=request.getContextPath()%>/criarp" >
+                                <form id="fomu" onsubmit="return validaform()" method="post" action="<%=request.getContextPath()%>/criarp">
                                     <legend>Cole em baixo o nome de um usuário:</legend><p/>
                                     <a href="#" onclick="ajuda_nome_user();" title="dúvidas sobre o nome de usuário?"><h6>o que é o nome de usuário?</h6></a>
                                     username: <input  type="text" id="username" name="username"/>
