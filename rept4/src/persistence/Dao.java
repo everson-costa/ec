@@ -14,7 +14,7 @@ public class Dao {
 	
 	private final String URL = "jdbc:mysql://localhost:3306/test";
 	private final String USER = "root";
-	private final String PASS = "";
+	private final String PASS = "qpzmqpzm";
 
 	protected void open()throws Exception{  
 	      Class.forName("com.mysql.jdbc.Driver");

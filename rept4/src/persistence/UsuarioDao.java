@@ -14,6 +14,14 @@ public class UsuarioDao extends Dao {
 
 		pstmt = con
 				.prepareStatement("INSERT INTO usuario(usuario_id_fb,usuario_nome_fb,usuario_username_fb) VALUES(?,?,?)");
+		
+//		INSERT INTO test.usuario (usuario_id_fb)
+//		SELECT * FROM (SELECT '333858585') as temp
+//		WHERE NOT EXISTS (
+//		    SELECT * FROM test.usuario WHERE usuario_id_fb = '333858585'
+//		) LIMIT 1;
+		
+		
 		// stmt.setString(1, p.getUsuario_id_fb());
 		pstmt.setString(1, p.getUsuario_id_fb());
 		pstmt.setString(2, p.getUsuario_nome_fb());
