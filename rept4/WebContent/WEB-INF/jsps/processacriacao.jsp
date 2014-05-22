@@ -31,7 +31,7 @@
              AccessToken acessoChave = new DefaultFacebookClient().obtainAppAccessToken(idapp, secretkey);
              chavetoken= acessoChave.toString();
              String tokenPura = chavetoken.substring(24,67);
-             System.out.println("token pura:"+tokenPura);
+             //System.out.println("token pura:"+tokenPura);
              
 //              AccessToken token_extend = new DefaultFacebookClient().obtainExtendedAccessToken(idapp, secretkey, tokenPura);
 //              String token_extendida_strng = token_extend.toString();

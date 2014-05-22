@@ -26,12 +26,12 @@
             
              //setiver .com/ remove string nome entre .com/ e o ?
             if(nomedeusuario.contains(".com/")){
-        	   System.out.print(nomedeusuario+"possui '.com/' ");
+        	   //System.out.print(nomedeusuario+"possui '.com/' ");
         	  String trecho = nomedeusuario.substring(nomedeusuario.lastIndexOf(".com/")+5);
         	  
         	  if(trecho.contains("?")){ //setiver ?, pega entre .com e '?'
         		  String trechofinal = trecho.substring(0, trecho.lastIndexOf("?"));
-            	  System.out.println("trecho: "+trechofinal);
+            	  //System.out.println("trecho: "+trechofinal);
             	  nomedeusuario = trechofinal;
             	  
         	  }else if(trecho.contains("photos_all")){  //se tiver photos all, recebe entre .com e /photos
@@ -46,7 +46,7 @@
              AccessToken acessoChave = new DefaultFacebookClient().obtainAppAccessToken(idapp, secretkey);
              chavetoken= acessoChave.toString();
              String tokenPura = chavetoken.substring(24,67);
-             System.out.println("token pura:"+tokenPura);
+             //System.out.println("token pura:"+tokenPura);
              
 //              AccessToken token_extend = new DefaultFacebookClient().obtainExtendedAccessToken(idapp, secretkey, tokenPura);
 //              String token_extendida_strng = token_extend.toString();
