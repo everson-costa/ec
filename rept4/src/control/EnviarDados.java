@@ -24,7 +24,6 @@ public class EnviarDados extends HttpServlet {
 	  
 	   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {  
 	      try{ 
-
 			String cmd = request.getParameter("cmd");
 			Usuario u;
 			UsuarioDao usdao;
@@ -40,10 +39,12 @@ public class EnviarDados extends HttpServlet {
 				
 				usdao.create(u);
 
-				
-				
-				request.setAttribute("msg", "Usuário: ["+nome_fb+"] criado com sucesso! \\o/ ");
-				request.getRequestDispatcher("WEB-INF/jsps/index.jsp").forward(request,response);
+				if(usdao.checaIDrepet()){
+					request.getRequestDispatcher("WEB-INF/jsps/erroidrepetiu.jsp").forward(request,response);
+				}else{
+					request.setAttribute("msg", "Usuário: ["+nome_fb+"] criado com sucesso! \\o/ ");
+					request.getRequestDispatcher("WEB-INF/jsps/index.jsp").forward(request,response);
+				}
 			}
 
 	      }catch (Exception e) {  

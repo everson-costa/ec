@@ -8,6 +8,8 @@ import model.Usuario;
 
 public class UsuarioDao extends Dao {
 	
+	boolean idrepete = false;
+	
 	public void create(Usuario p) throws Exception {
 
 		open();
@@ -15,8 +17,7 @@ public class UsuarioDao extends Dao {
 
 		if (verificaIDexistente(testaId)) {
 			close();
-
-
+			idrepete = true;
 		} else {
 			pstmt = con
 					.prepareStatement("INSERT INTO usuario(usuario_id_fb,usuario_nome_fb,usuario_username_fb) VALUES(?,?,?)");
@@ -28,7 +29,7 @@ public class UsuarioDao extends Dao {
 			pstmt.execute();
 			close();
 		}
-
+   
 	}
 
 	public List<Usuario> listar() throws Exception {
@@ -100,5 +101,15 @@ public boolean verificaIDexistente(String testaIdFb) throws Exception {
 		//System.out.println("verificacao retornou: "+existeID);
 		return existeID;
 		
+	}
+
+	public boolean checaIDrepet() {
+
+		if (idrepete == true) {
+			return true;
+		} else {
+			return false;
+		}
+
 	}
 }
