@@ -40,6 +40,8 @@ public class EnviarDados extends HttpServlet {
 				
 				usdao.create(u);
 
+				
+				
 				request.setAttribute("msg", "Usuário: ["+nome_fb+"] criado com sucesso! \\o/ ");
 				request.getRequestDispatcher("WEB-INF/jsps/index.jsp").forward(request,response);
 			}

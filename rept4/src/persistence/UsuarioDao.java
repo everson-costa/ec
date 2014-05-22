@@ -7,29 +7,28 @@ import java.util.List;
 import model.Usuario;
 
 public class UsuarioDao extends Dao {
-
+	
 	public void create(Usuario p) throws Exception {
 
 		open();
+		String testaId = p.getUsuario_id_fb();
 
-		pstmt = con
-				.prepareStatement("INSERT INTO usuario(usuario_id_fb,usuario_nome_fb,usuario_username_fb) VALUES(?,?,?)");
-		
-//		INSERT INTO test.usuario (usuario_id_fb)
-//		SELECT * FROM (SELECT '333858585') as temp
-//		WHERE NOT EXISTS (
-//		    SELECT * FROM test.usuario WHERE usuario_id_fb = '333858585'
-//		) LIMIT 1;
-		
-		
-		// stmt.setString(1, p.getUsuario_id_fb());
-		pstmt.setString(1, p.getUsuario_id_fb());
-		pstmt.setString(2, p.getUsuario_nome_fb());
-		pstmt.setString(3, p.getUsuario_username_fb());
-		// stmt.setString(3, p.getUsuario_username_fb());
+		if (verificaIDexistente(testaId)) {
+			close();
 
-		pstmt.execute();
-		close();
+
+		} else {
+			pstmt = con
+					.prepareStatement("INSERT INTO usuario(usuario_id_fb,usuario_nome_fb,usuario_username_fb) VALUES(?,?,?)");
+			// stmt.setString(1, p.getUsuario_id_fb());
+			pstmt.setString(1, p.getUsuario_id_fb());
+			pstmt.setString(2, p.getUsuario_nome_fb());
+			pstmt.setString(3, p.getUsuario_username_fb());
+			// stmt.setString(3, p.getUsuario_username_fb());
+			pstmt.execute();
+			close();
+		}
+
 	}
 
 	public List<Usuario> listar() throws Exception {
@@ -63,5 +62,43 @@ public class UsuarioDao extends Dao {
 			System.out.println("erro listar:" + e);
 		}
 		return usuarios;
+	}
+	
+public boolean verificaIDexistente(String testaIdFb) throws Exception {
+		boolean existeID = false;
+		List<Usuario> usuarios = new ArrayList<Usuario>();
+		
+		try {
+			open();
+			String sql = "SELECT usuario_id_fb FROM usuario;";
+			//con.createStatement();
+			pstmt = con.prepareStatement(sql);
+			pstmt.execute();
+			
+			rs = pstmt.getResultSet();
+
+			while (rs.next()) {
+				
+				Usuario user = new Usuario();
+				String usidfb = rs.getString("usuario_id_fb");
+				user.setUsuario_id_fb(usidfb);
+				usuarios.add(user);
+								
+				if(user.getUsuario_id_fb().contains(testaIdFb)){
+					//System.out.println("ja existe um registro na tabela usuario com o id: "+testaIdFb);
+					existeID = true;
+					
+				}
+				
+			}
+
+			
+			
+		} catch (SQLException e) {
+			System.out.println("erro listar:" + e);
+		}
+		//System.out.println("verificacao retornou: "+existeID);
+		return existeID;
+		
 	}
 }
