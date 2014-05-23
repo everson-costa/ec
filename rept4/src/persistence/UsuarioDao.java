@@ -4,6 +4,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.catalina.connector.Request;
+
 import model.Usuario;
 
 public class UsuarioDao extends Dao {
@@ -32,12 +34,15 @@ public class UsuarioDao extends Dao {
    
 	}
 
-	public List<Usuario> listar() throws Exception {
+	public List<Usuario> listar(String valp) throws Exception {
 		
 		List<Usuario> usuarios = new ArrayList<Usuario>();
+		
 		try {
 			open();
-			String sql = "SELECT usuario_id_fb, usuario_nome_fb,usuario_username_fb FROM usuario;";
+			String sql = "select usuario_id_fb,usuario_nome_fb,usuario_username_fb from test.usuario" +
+					" where usuario_nome_fb like '%"+valp+"%' or usuario_username_fb like '%"+valp+"%'" +
+					" order by usuario_nome_fb asc,usuario_username_fb asc;";
 			//con.createStatement();
 			pstmt = con.prepareStatement(sql);
 			pstmt.execute();

@@ -30,11 +30,19 @@
   	</servlet-mapping>
   	<servlet>
 		<servlet-name>pesquisa</servlet-name>
-		<jsp-file>/WEB-INF/jsps/consulta.jsp</jsp-file>
+		<jsp-file>/WEB-INF/jsps/pesquisa.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
   		<servlet-name>pesquisa</servlet-name>
   		<url-pattern>/pesquisa</url-pattern> <!-- Use this URL -->
+  	</servlet-mapping>
+  	<servlet>
+		<servlet-name>respesquisa</servlet-name>
+		<jsp-file>/WEB-INF/jsps/respesquisa.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+  		<servlet-name>respesquisa</servlet-name>
+  		<url-pattern>/respesquisa</url-pattern> <!-- Use this URL -->
   	</servlet-mapping>
   	<servlet>
 		<servlet-name>processamento</servlet-name>

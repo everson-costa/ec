@@ -26,7 +26,7 @@
        ${msg}<br/><br/>
        pesquisar usuarios:
 
-       <a href="<%=request.getContextPath()%>/pesquisa">link pesquisa</a>      
+       <a href="<%=request.getContextPath()%>/respesquisa">link pesquisa</a>      
     </body>  
     </html>
 <!--   teste 2nd commit em master   -->
