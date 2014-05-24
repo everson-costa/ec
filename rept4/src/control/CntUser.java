@@ -10,46 +10,49 @@ import javax.servlet.http.HttpServletResponse;
 
 import persistence.UsuarioDao;
 
-
 @WebServlet("/CntUser")
 public class CntUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	//private UsuarioDao dao;
+
+	// private UsuarioDao dao;
 
 	public CntUser() {
 		super();
-		
+
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {  
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		String valpesquisa = request.getParameter("vpesq");
 		if (valpesquisa.equalsIgnoreCase("") || valpesquisa == null) {
-			request.getRequestDispatcher("WEB-INF/jsps/valpesquisavazio.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/jsps/valpesquisavazio.jsp")
+					.forward(request, response);
 			System.out.println("vazio o campo informado");
 		} else {
 			try {
-					UsuarioDao usdao = new UsuarioDao();
-					System.out.println(valpesquisa);
-					request.setAttribute("usuario_id_fb", usdao.listar(valpesquisa));
-					request.setAttribute("usuario_nome_fb", usdao.listar(valpesquisa));
-					request.setAttribute("usuario_username_fb", usdao.listar(valpesquisa));
-					RequestDispatcher view = request.getRequestDispatcher("WEB-INF/jsps/respesquisa.jsp");
-					view.forward(request, response);
-					
-					 //RequestDispatcher view = request.getRequestDispatcher("DemoJSP.jsp");
-				       // view.forward(request, response);
-				} catch (Exception e) {
-					request.setAttribute("msg", "Erro get: " + e.getMessage());  
-					request.getRequestDispatcher("WEB-INF/jsps/respesquisa.jsp").forward(request,response);  
-				}
-	}}
-	  
-	   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {  
-	      try{ 
+				UsuarioDao usdao = new UsuarioDao();
+				System.out.println(valpesquisa);
+				request.setAttribute("usuario_id_fb", usdao.listar(valpesquisa));
+				request.setAttribute("usuario_nome_fb",usdao.listar(valpesquisa));
+				request.setAttribute("usuario_username_fb",usdao.listar(valpesquisa));
+				RequestDispatcher view = request.getRequestDispatcher("WEB-INF/jsps/respesquisa.jsp");
+				view.forward(request, response);
 
-	      }catch (Exception e) {  
-	          request.setAttribute("msg", "Erro: " + e.getMessage());  
-	          request.getRequestDispatcher("WEB-INF/jsps/index.jsp").forward(request,response);  
-	       }  
-	    }  
-	 }
+			} catch (Exception e) {
+				request.setAttribute("msg", "Erro get: " + e.getMessage());
+				request.getRequestDispatcher("WEB-INF/jsps/respesquisa.jsp").forward(request, response);
+			}
+		}
+	}
+
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		try {
+
+		} catch (Exception e) {
+			request.setAttribute("msg", "Erro: " + e.getMessage());
+			request.getRequestDispatcher("WEB-INF/jsps/index.jsp").forward(
+					request, response);
+		}
+	}
+}

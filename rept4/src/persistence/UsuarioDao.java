@@ -41,13 +41,13 @@ public class UsuarioDao extends Dao {
 		try {
 			open();
 			String sql = "select usuario_id_fb,usuario_nome_fb,usuario_username_fb from test.usuario" +
-					" where usuario_nome_fb like '%"+valp+"%' or usuario_username_fb like '%"+valp+"%'" +
-					" order by usuario_nome_fb asc,usuario_username_fb asc;";
-			//con.createStatement();
-			pstmt = con.prepareStatement(sql);
-			pstmt.execute();
+					" where usuario_nome_fb like ? or usuario_username_fb like ? order by usuario_nome_fb asc,usuario_username_fb asc;";
 			
-			rs = pstmt.getResultSet();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, "%" + valp + "%");
+			pstmt.setString(2, "%" + valp + "%");
+			rs = pstmt.executeQuery();
+			
 
 			while (rs.next()) {
 				
