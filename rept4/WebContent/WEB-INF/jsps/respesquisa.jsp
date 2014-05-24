@@ -11,25 +11,15 @@
 // 		document.forms['flista'].submit();
 // 	}
 </script>
-	<script type="text/javascript">
-		function valida() {
-			var urlinformada=document.forms["flista"]["vpesq"].value;
-			if (urlinformada== "" || x== null) {
-				alert("informe um nome para pesquisar.");
-				location.href="<%=request.getContextPath()%>/respesquisa";
-			}else{
-				return true;
-			}
-		}
-	</script>
+
 </head>
 <body>
+ <a href="<%=request.getContextPath()%>/home" title="página inicial">rept!4</a><br/>
+
 	<jsp:useBean id="dao" class="persistence.UsuarioDao"></jsp:useBean>
 		
 	<form name="flista" action="<%=request.getContextPath()%>/CntUser" method="get">
-		
-<%-- 		<%String buscanobanco = request.getParameter("valpesquisa"); %> --%>
-		
+			
 		buscar no banco:<input type="text" name="vpesq" id="vpesq"/> 
 		<input type="submit" value="ok" /><br/><br/>
 		

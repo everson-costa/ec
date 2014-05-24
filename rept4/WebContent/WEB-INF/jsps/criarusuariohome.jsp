@@ -11,7 +11,7 @@
 	<script type="text/javascript">
 		function validaform() {
 			var urlinformada=document.forms["fomu"]["username"].value;
-			if (urlinformada== "" || x== null) {
+			if (urlinformada== "" || urlinformada== null) {
 				alert("você deve informar uma URL com username válido.");
 				return false;
 			}else{
@@ -30,7 +30,7 @@
                 js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=608680442496976"; //VERIFICAR ESSA ID (É MINHA APLICÇÃO REPUTEIXON)
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));</script>
-        <center>
+
         <table border="1">
             <tr>
                 <td align="right" width="1024px">
@@ -39,13 +39,13 @@
             </tr>
             <tr>
                 <td>
-                    <a href="<%=request.getContextPath()%>/home" title="página inicial"><h1>rept!4</h1></a><br/>
+                    <a href="<%=request.getContextPath()%>/home" title="página inicial">rept!4</a><br/>
                         <table border="1">
                         <tr>
                             <td>
                                 <form id="fomu" onsubmit="return validaform()" method="post" action="<%=request.getContextPath()%>/criarp">
                                     <legend>Cole em baixo o nome de um usuário:</legend><p/>
-                                    <a href="#" onclick="ajuda_nome_user();" title="dúvidas sobre o nome de usuário?"><h6>o que é o nome de usuário?</h6></a>
+                                    <a href="#" onclick="ajuda_nome_user();" title="dúvidas sobre o nome de usuário?">o que é o nome de usuário?</a>
                                     username: <input  type="text" id="username" name="username"/>
                                     <input type="submit" value="vai!"/>
                                 </form>
@@ -55,6 +55,5 @@
                 </td>
             </tr>
         </table>
-    </center>
 </body>
 </html>

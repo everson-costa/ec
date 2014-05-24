@@ -7,7 +7,7 @@
 <title>opa...</title>
 </head>
 <body>
-Você deve informar um nome para fazer a pesquisa.<br/>
+Você deve informar um nome para fazer a pesquisa. Evite usar nomes muito curtos.<br/>
 Você pode <a href="<%=request.getContextPath()%>/respesquisa" title="voltar e tentar novamente dessa vez DIGITANDO um nome.">voltar</a>
 para tentar novamente ou ir para a <a href="<%=request.getContextPath()%>/home"><u>página inicial</u></a> do rept4!.
 </body>
