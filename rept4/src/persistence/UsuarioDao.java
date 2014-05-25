@@ -4,8 +4,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.catalina.connector.Request;
-
 import model.Usuario;
 
 public class UsuarioDao extends Dao {
