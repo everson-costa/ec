@@ -83,7 +83,10 @@
             </tr> 
         </table>
         <br/>
-         <form action="EnviarDados?cmd=cadastrar" method="post" name="formcria" id="formcria">  
+        
+        
+         <form action="EnviarDados?cmd=cadastrar&?perfil" method="post" name="formcria" id="formcria">  
+         <input type="hidden" id="lnkperfil" name="lnkperfil" value="<%=perfil%>"/>
          
           ID ():
           <input type="text" name="idfb" id="idfb" value="<%=id%>" readonly="readonly"/>

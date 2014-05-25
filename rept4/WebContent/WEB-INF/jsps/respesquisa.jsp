@@ -1,3 +1,4 @@
+<%@page import="model.Usuario"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="ISO-8859-1"%>
@@ -20,7 +21,8 @@
 		
 	<form name="flista" action="<%=request.getContextPath()%>/CntUser" method="get">
 			
-		buscar no banco:<input type="text" name="vpesq" id="vpesq"/> 
+		buscar no banco:<input type="text" name="vpesq" id="vpesq"/>
+				 
 		<input type="submit" value="ok" /><br/><br/>
 		
 		<table border="1">
@@ -32,7 +34,7 @@
 			<c:forEach items="${usuario_nome_fb}" var="usu">
 				<tr>
 					<td>${usu.usuario_id_fb}</td>
-					<td>${usu.usuario_nome_fb}</td>
+					<td><a href="<%=request.getContextPath()%>/perf?per=${usu.usuario_id_fb}">${usu.usuario_nome_fb}</a></td>
 					<td>${usu.usuario_username_fb}</td>
 				</tr>
 			</c:forEach>

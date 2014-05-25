@@ -4,7 +4,7 @@ public class Usuario {
 	private String usuario_id_fb;
 	private String usuario_nome_fb;
 	private String usuario_username_fb;
-
+	
 	public Usuario(String usuario_id_fb,String usuario_nome_fb,String usuario_username_fb) {
 		super();
 		this.usuario_id_fb = usuario_id_fb;

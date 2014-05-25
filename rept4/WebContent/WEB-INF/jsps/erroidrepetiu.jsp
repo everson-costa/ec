@@ -8,7 +8,9 @@
 </head>
 <body>
 O username que você usou possui um ID que já está cadastrado no sistema.<br/>
-Você pode <a href="<%=request.getContextPath()%>/criar" title="voltar e tentar novamente dessa vez com um username correto.">voltar</a>
-para tentar novamente ou ir para a <a href="<%=request.getContextPath()%>/home"><u>página inicial</u></a> do rept4!.
+${lnkperfil} ou <a href="<%=request.getContextPath()%>/criar" title="voltar e tentar novamente dessa vez com um username correto.">voltar</a>
+para criar usando um username diferente.<br/>
+<a href="<%=request.getContextPath()%>/home"><u>página inicial</u></a> do rept4!.<br/>
+
 </body>
 </html>

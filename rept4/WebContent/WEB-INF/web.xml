@@ -45,6 +45,14 @@
   		<url-pattern>/respesquisa</url-pattern> <!-- Use this URL -->
   	</servlet-mapping>
   	<servlet>
+		<servlet-name>perf</servlet-name>
+		<jsp-file>/WEB-INF/jsps/pagperfil.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+  		<servlet-name>perf</servlet-name>
+  		<url-pattern>/perf</url-pattern> <!-- Use this URL -->
+  	</servlet-mapping>
+  	<servlet>
 		<servlet-name>processamento</servlet-name>
 		<jsp-file>/WEB-INF/jsps/processacriacao.jsp</jsp-file>
 	</servlet>
