@@ -17,11 +17,8 @@
 			
 					<h6>id: ${usu.usuario_id_fb}</h6><br/>
 					<h3>${usu.usuario_nome_fb}</h3><br/>
-					username: ${usu.usuario_username_fb}
-				
-<!-- 				<script type="text/javascript"> -->
-<%--  				alert("${usu.usuario_nome_fb}"); --%>
-<!-- 				</script> -->
+					username: ${usu.usuario_username_fb}<br/>
+					<img src="http://graph.facebook.com/${usu.usuario_id_fb}/picture?type=large"/>
 				
 				
 			</c:forEach>

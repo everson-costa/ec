@@ -22,7 +22,7 @@ public class CntUser extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
-		String valpesquisa = request.getParameter("vpesq"); //não permite pesquisar usando campo em branco, 1espaço, null, . , menor 2 caracteres 
+		String valpesquisa = request.getParameter("vpesq"); //não permite pesquisar usando campo em branco, 1espaço, null, . , menoS 2 caracteres 
 		if (valpesquisa.equalsIgnoreCase("") ||
 				valpesquisa == null ||
 				valpesquisa.equalsIgnoreCase(" ") ||
