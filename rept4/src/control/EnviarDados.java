@@ -40,7 +40,7 @@ public class EnviarDados extends HttpServlet {
 				usdao.create(u);
 
 				if(usdao.checaIDrepet()){
-					request.setAttribute("lnkperfil", "Visitar o perfil de <a href=\"#\">["+nome_fb+"</a>].");
+					request.setAttribute("lnkperfil", "visitar: <a href="+request.getContextPath()+"/LoadProfile?loadperfil="+usidfb+">["+nome_fb+"]</a>.");
 					request.getRequestDispatcher("WEB-INF/jsps/erroidrepetiu.jsp").forward(request,response);
 				}else{
 					request.setAttribute("msg", "Usuário: ["+nome_fb+"] criado com sucesso! \\o/ ");
