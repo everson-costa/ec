@@ -6,27 +6,28 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script type="text/javascript">
+function corrk(){
+	var val = parseFloat(document.getElementById("rk").innerHTML);
+		if(val < 1){
+			document.getElementById("rk").style.color="#FF0000";
+		}else{
+			document.getElementById("rk").style.color="#00FF00";		
+		}
+	}
+</script>
 </head>
-<body>
+<body onload="corrk()">
  <a href="<%=request.getContextPath()%>/home" title="página inicial">rept!4</a><br/>
 
 	<jsp:useBean id="dao" class="persistence.UsuarioDao"></jsp:useBean>
 	Pessoal<br/>
 		
 			<c:forEach items="${usuario_nome_fb}" var="usu">
-			
 					<h6>id: ${usu.usuario_id_fb}</h6><br/>
-					<h3>${usu.usuario_nome_fb}</h3>Rank:<h2>${usu.ratio}</h2><br/>
+					<h3>${usu.usuario_nome_fb}</h3>Rank:<h2><span id="rk" name="rk">${usu.ratio}</span></h2><br/>
 					username: ${usu.usuario_username_fb}<br/>
 					<img src="http://graph.facebook.com/${usu.usuario_id_fb}/picture?type=large"/>
-					
-				
-				
 			</c:forEach>
-		
-		
-		
-
-	
 </body>
 </html>
