@@ -14,8 +14,19 @@ CREATE TABLE test.`usuario` (
 
 
 
---INSERT INTO test.usuario (usuario_id_fb)
---SELECT * FROM (SELECT '333858585') as temp
---WHERE NOT EXISTS (
---    SELECT * FROM test.usuario WHERE usuario_id_fb = '333858585'
---) LIMIT 1;
+CREATE TABLE test.`perfil` (
+  `usidfb` varchar(20),
+  `perlikes` int default null,
+  `perdeslikes` int default null,
+  `ratio` double (7,2),
+   FOREIGN KEY (usidfb) 
+        REFERENCES usuario(usuario_id_fb)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+update test.perfil set perlikes = perlikes +1 where usidfb like '221005259400074';
+select * from test.perfil;
+
+
+update test.perfil set ratio = perlikes-perdeslikes where usidfb like '221005259400074';
+select * from test.perfil order by ratio desc;
