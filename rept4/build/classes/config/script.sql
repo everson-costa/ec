@@ -23,10 +23,20 @@ CREATE TABLE test.`perfil` (
         REFERENCES usuario(usuario_id_fb)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+--update test.perfil set perlikes = perlikes +1 where usidfb like '221005259400074';
+--select * from test.perfil;
+--
+--
+--update test.perfil set ratio = perlikes-perdeslikes where usidfb like '221005259400074';
+--select * from test.perfil order by ratio desc;
 
-update test.perfil set perlikes = perlikes +1 where usidfb like '221005259400074';
-select * from test.perfil;
 
-
-update test.perfil set ratio = perlikes-perdeslikes where usidfb like '221005259400074';
-select * from test.perfil order by ratio desc;
+--DELIMITER $$
+--CREATE PROCEDURE test.criaperfil(id VARCHAR(20))
+--     BEGIN
+--       insert into test.perfil (usidfb,perlikes,perdeslikes,ratio) values (id,0,0,0);
+--     END$$
+--
+--
+--CALL `test`.`criaperfil`('100001988701789');

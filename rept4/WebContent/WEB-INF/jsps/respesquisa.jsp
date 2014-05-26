@@ -30,12 +30,14 @@
 				<td>id</td>
 				<td>nome</td>
 				<td>username</td>
+				<td>rt</td>
 			</tr>
 			<c:forEach items="${usuario_nome_fb}" var="usu">
 				<tr>
 					<td>${usu.usuario_id_fb}</td>
 					<td><a href="<%=request.getContextPath()%>/perf?per=${usu.usuario_id_fb}">${usu.usuario_nome_fb}</a></td>
 					<td>${usu.usuario_username_fb}</td>
+					<td>${usu.ratio}</td>
 				</tr>
 			</c:forEach>
 		</table>

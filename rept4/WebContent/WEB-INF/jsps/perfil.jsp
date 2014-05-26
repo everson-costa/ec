@@ -16,9 +16,10 @@
 			<c:forEach items="${usuario_nome_fb}" var="usu">
 			
 					<h6>id: ${usu.usuario_id_fb}</h6><br/>
-					<h3>${usu.usuario_nome_fb}</h3><br/>
+					<h3>${usu.usuario_nome_fb}</h3>Rank:<h2>${usu.ratio}</h2><br/>
 					username: ${usu.usuario_username_fb}<br/>
 					<img src="http://graph.facebook.com/${usu.usuario_id_fb}/picture?type=large"/>
+					
 				
 				
 			</c:forEach>

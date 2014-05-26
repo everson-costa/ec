@@ -38,6 +38,8 @@ public class LoadProfile extends HttpServlet {
 				request.setAttribute("usuario_id_fb", usdao.pegaPerfil(idperfil));
 				request.setAttribute("usuario_nome_fb",usdao.pegaPerfil(idperfil));
 				request.setAttribute("usuario_username_fb",usdao.pegaPerfil(idperfil));
+				request.setAttribute("ratio",usdao.pegaPerfil(idperfil));
+				
 				RequestDispatcher view = request.getRequestDispatcher("WEB-INF/jsps/perfil.jsp");
 				view.forward(request, response);
 
