@@ -3,6 +3,7 @@ package control;
 import java.io.IOException;
 import java.sql.CallableStatement;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,10 +29,10 @@ public class Laique extends HttpServlet {
 	      try{
 			UsuarioDao usdao;
 			usdao = new UsuarioDao();
-			String idpralaique = request.getParameter("idform");
+			String idpralaique = request.getParameter("idfbform");
 			usdao.Laique(idpralaique);
-			System.out.println(" idpra laique:" + idpralaique);
-			
+			RequestDispatcher view = request.getRequestDispatcher(request.getContextPath()+"LoadProfile?loadperfil="+idpralaique);
+			view.forward(request, response);
 	      }catch (Exception e) {  
 	          request.setAttribute("msg", "Erro: " + e.getMessage());  
 	          request.getRequestDispatcher("WEB-INF/jsps/erro.jsp").forward(request,response);  

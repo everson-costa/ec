@@ -7,6 +7,7 @@ import java.util.List;
 
 
 
+
 import model.Usuario;
 
 public class UsuarioDao extends Dao {
@@ -66,10 +67,15 @@ public class UsuarioDao extends Dao {
 				String ratio = rs.getString("p.ratio");
 				System.out.println(" id:"+usidfb+" nome:"+nome+" usr:"+usernamefb+" ratio:"+ratio);
 				
+				if (ratio == null) {
+					ratio = "0";
+				}
+				
 				user.setUsuario_id_fb(usidfb);
 				user.setUsuario_nome_fb(nome);
 				user.setUsuario_username_fb(usernamefb);
 				user.setRatio(Float.parseFloat(ratio));
+				
 				
 				usuarios.add(user);
 				System.out.println("passou while");
@@ -162,7 +168,7 @@ public boolean verificaIDexistente(String testaIdFb) throws Exception {
 
 	}
 	
-	public void Laique(String idpralaique) throws SQLException{
+	public void Laique(String idpralaique) throws Exception{
 		try {
 		open();
 				
