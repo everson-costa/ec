@@ -174,7 +174,23 @@ public boolean verificaIDexistente(String testaIdFb) throws Exception {
 				
 		CallableStatement cstmt = con.prepareCall("{call laique(?)}");
 		cstmt.setString(1,idpralaique);
-		System.out.println(idpralaique);
+		
+		rs = cstmt.executeQuery();
+		
+		close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void DesLaique(String idpraDeslaique) throws Exception{
+		try {
+		open();
+				
+		CallableStatement cstmt = con.prepareCall("{call deslaique(?)}");
+		cstmt.setString(1,idpraDeslaique);
 		
 		rs = cstmt.executeQuery();
 		

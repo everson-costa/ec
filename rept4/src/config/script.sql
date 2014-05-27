@@ -43,7 +43,7 @@ CREATE TABLE test.`perfil` (
 --DELIMITER $$
 --CREATE PROCEDURE test.deslaique(id VARCHAR(20))
 --     BEGIN
---       update test.perfil set perdeslikes = perdeslikes +1, ratio = perlikes-perdeslikes where usidfb like id;
+--       update test.perfil set perdeslikes = perdeslikes +1, ratio = perlikes/perdeslikes where usidfb like id;
 --     END$$
 
 --CALL `test`.`deslaique`('100001988701789');

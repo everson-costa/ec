@@ -18,7 +18,8 @@ function corrk(){
 	
 	function inputs(){
 		var idf = document.getElementById("idfb").innerHTML;
-		document.getElementById("idfbform").value=idf;
+		document.getElementById("laique").value=idf;
+		document.getElementById("deslai").value=idf;
 	}
 	
 </script>
@@ -36,8 +37,13 @@ function corrk(){
 					<img src="http://graph.facebook.com/${usu.usuario_id_fb}/picture?type=large"/><br/>
 					
 					<form action="<%=request.getContextPath()%>/Laique" method="post">
-						<input type="text" id="idfbform" name="idfbform" />
-						<input type="submit" value="+1"/>
+						<input type="hidden" id="laique" name="laique" />
+						<input type="submit" value="+R!"/>
+					</form>
+					
+						<form action="<%=request.getContextPath()%>/DesLaique" method="post">
+						<input type="hidden" id="deslai" name="deslai" />
+						<input type="submit" value="-R!"/>
 					</form>
 					
 			</c:forEach>
