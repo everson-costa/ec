@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
 import model.Usuario;
 
 public class UsuarioDao extends Dao {
@@ -161,7 +162,23 @@ public boolean verificaIDexistente(String testaIdFb) throws Exception {
 
 	}
 	
-	
+	public void Laique(String idpralaique) throws SQLException{
+		try {
+		open();
+				
+		CallableStatement cstmt = con.prepareCall("{call laique(?)}");
+		cstmt.setString(1,idpralaique);
+		System.out.println(idpralaique);
+		
+		rs = cstmt.executeQuery();
+		
+		close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 	
 	
 }

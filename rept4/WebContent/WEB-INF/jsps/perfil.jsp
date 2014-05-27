@@ -15,19 +15,31 @@ function corrk(){
 			document.getElementById("rk").style.color="#00FF00";		
 		}
 	}
+	
+	function inputs(){
+		var idf = document.getElementById("idfb").innerHTML;
+		document.getElementById("idfbform").value=idf;
+	}
+	
 </script>
 </head>
-<body onload="corrk()">
+<body onload="corrk(),inputs()">
  <a href="<%=request.getContextPath()%>/home" title="página inicial">rept!4</a><br/>
 
 	<jsp:useBean id="dao" class="persistence.UsuarioDao"></jsp:useBean>
 	Pessoal<br/>
 		
 			<c:forEach items="${usuario_nome_fb}" var="usu">
-					<h6>id: ${usu.usuario_id_fb}</h6><br/>
+					<h6>id:<span id="idfb" name="idfb">${usu.usuario_id_fb}</span></h6><br/>
 					<h3>${usu.usuario_nome_fb}</h3>Rank:<h2><span id="rk" name="rk">${usu.ratio}</span></h2><br/>
 					username: ${usu.usuario_username_fb}<br/>
-					<img src="http://graph.facebook.com/${usu.usuario_id_fb}/picture?type=large"/>
+					<img src="http://graph.facebook.com/${usu.usuario_id_fb}/picture?type=large"/><br/>
+					
+					<form action="<%=request.getContextPath()%>/Laique" method="post">
+						<input type="text" id="idfbform" name="idfbform" />
+						<input type="submit" value="+1"/>
+					</form>
+					
 			</c:forEach>
 </body>
 </html>
