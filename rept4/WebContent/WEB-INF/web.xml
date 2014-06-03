@@ -28,4 +28,44 @@
   		<servlet-name>criarp</servlet-name>
   		<url-pattern>/criarp</url-pattern> <!-- Use this URL -->
   	</servlet-mapping>
+  	<servlet>
+		<servlet-name>pesquisa</servlet-name>
+		<jsp-file>/WEB-INF/jsps/pesquisa.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+  		<servlet-name>pesquisa</servlet-name>
+  		<url-pattern>/pesquisa</url-pattern> <!-- Use this URL -->
+  	</servlet-mapping>
+  	<servlet>
+		<servlet-name>respesquisa</servlet-name>
+		<jsp-file>/WEB-INF/jsps/respesquisa.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+  		<servlet-name>respesquisa</servlet-name>
+  		<url-pattern>/respesquisa</url-pattern> <!-- Use this URL -->
+  	</servlet-mapping>
+  	<servlet>
+		<servlet-name>perf</servlet-name>
+		<jsp-file>/WEB-INF/jsps/pagperfil.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+  		<servlet-name>perf</servlet-name>
+  		<url-pattern>/perf</url-pattern> <!-- Use this URL -->
+  	</servlet-mapping>
+  	<servlet>
+		<servlet-name>processamento</servlet-name>
+		<jsp-file>/WEB-INF/jsps/processacriacao.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+  		<servlet-name>processamento</servlet-name>
+  		<url-pattern>/processamento</url-pattern> <!-- Use this URL -->
+  	</servlet-mapping>
+  	<servlet>
+		<servlet-name>erro</servlet-name>
+		<jsp-file>/WEB-INF/jsps/erro.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+  		<servlet-name>erro</servlet-name>
+  		<url-pattern>/erro</url-pattern> <!-- Use this URL -->
+  	</servlet-mapping>
 </web-app>
