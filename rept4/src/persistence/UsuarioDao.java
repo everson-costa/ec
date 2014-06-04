@@ -3,6 +3,7 @@ package persistence;
 import java.sql.CallableStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -168,7 +169,15 @@ public boolean verificaIDexistente(String testaIdFb) throws Exception {
 
 	}
 	
-	public void Laique(String idpralaique) throws Exception{
+	public void Laique(String idpralaique,Long nume) throws Exception{
+		Date dt = new Date();
+		Long atual = dt.getTime();
+		nume += 20000;
+		//System.out.println("antigo+inc: "+nume);
+		//System.out.println("novo: "+atual);
+		
+		if(nume < atual){
+		
 		try {
 		open();
 				
@@ -176,11 +185,14 @@ public boolean verificaIDexistente(String testaIdFb) throws Exception {
 		cstmt.setString(1,idpralaique);
 		
 		rs = cstmt.executeQuery();
-		
+		System.out.println("+1  para: "+idpralaique);
 		close();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+		}else{
+			System.out.println("você não pode clicar com frequencia. aguarde 20 segundos.");
 		}
 		
 	}
