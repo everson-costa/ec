@@ -169,14 +169,14 @@ public boolean verificaIDexistente(String testaIdFb) throws Exception {
 
 	}
 	
-	public void Laique(String idpralaique,Long nume) throws Exception{
-		Date dt = new Date();
-		Long atual = dt.getTime();
-		nume += 20000;
+	public void Laique(String idpralaique) throws Exception{
+		//Date dt = new Date();
+		//Long atual = dt.getTime();
+		//nume += 20000;
 		//System.out.println("antigo+inc: "+nume);
 		//System.out.println("novo: "+atual);
 		
-		if(nume < atual){
+		//if(nume < atual){
 		
 		try {
 		open();
@@ -191,9 +191,9 @@ public boolean verificaIDexistente(String testaIdFb) throws Exception {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		}else{
-			System.out.println("você não pode clicar com frequencia. aguarde 20 segundos.");
-		}
+		//}else{
+			//System.out.println("você não pode clicar com frequencia. aguarde 20 segundos.");
+		//}
 		
 	}
 	
@@ -205,7 +205,7 @@ public boolean verificaIDexistente(String testaIdFb) throws Exception {
 		cstmt.setString(1,idpraDeslaique);
 		
 		rs = cstmt.executeQuery();
-		
+		System.out.println("-1  para: "+idpraDeslaique);
 		close();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

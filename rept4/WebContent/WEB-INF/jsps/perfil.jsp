@@ -13,6 +13,7 @@
 Long ctimes = dt.getTime();
 //Cookie c1 = new Cookie("cd1",codtime.toString());
 %>
+
 <script type="text/javascript">
 function corrk(){
 	var val = parseFloat(document.getElementById("rk").innerHTML);
@@ -49,6 +50,22 @@ function corrk(){
 	
 </script>
 
+<script type="text/javascript">
+function atbt() {
+	var x = document.getElementById("btact1");
+	x.value = "+R!";
+	x.disabled = false;
+	}
+
+	function disatbt() {
+	var x = document.getElementById("btact1");
+	// do whatever is required when button clicked
+	x.value = "desat";
+	x.disabled = true;
+	setTimeout('atbt()', 15000);
+	}
+</script>
+
 </head>
 <%-- antigo+1:<%=antigo%> --%>
 <br/>
@@ -65,9 +82,10 @@ atual<%=aux%><br/>
 					username: ${usu.usuario_username_fb}<br/>
 <%-- 					<img src="http://graph.facebook.com/${usu.usuario_id_fb}/picture?type=large"/><br/> --%>
 					
-					<form action="<%=request.getContextPath()%>/Laique" method="post">
+					<form onclick="disatbt()" action="<%=request.getContextPath()%>/Laique" method="post">
 						<input type="hidden" id="laique" name="laique" />
-						<input type="submit" value="+R!"/>
+<!-- 					<input type="submit" value="+R!"/> -->
+                        <input type="submit" value="R!" id ="btact1"  name="btact1" disabled="enabled"/>
 						<input type="text" id="num1" name="num1" value="<%=ctimes%>" />
 					</form>
 					

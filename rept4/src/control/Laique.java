@@ -28,9 +28,9 @@ public class Laique extends HttpServlet {
 	      try{
 			UsuarioDao usdao;
 			usdao = new UsuarioDao();
-			Long tempos = Long.parseLong(request.getParameter("num1"));
+			//Long tempos = Long.parseLong(request.getParameter("num1"));
 			String idpralaique = request.getParameter("laique");
-			usdao.Laique(idpralaique,tempos);
+			usdao.Laique(idpralaique);
 			RequestDispatcher view = request.getRequestDispatcher("WEB-INF/jsps/pagperfil.jsp?per="+idpralaique);
 			view.forward(request, response);
 	      }catch (Exception e) {  
