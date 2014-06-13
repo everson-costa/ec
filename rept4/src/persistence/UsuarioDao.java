@@ -152,13 +152,13 @@ public boolean verificaIDexistente(String testaIdFb) throws Exception {
 				String nome = rs.getString("u.usuario_nome_fb");
 				String usernamefb = rs.getString("u.usuario_username_fb");
 				String ratio = rs.getString("p.ratio");
-				
 				user.setUsuario_id_fb(usidfb);
 				user.setUsuario_nome_fb(nome);
 				user.setUsuario_username_fb(usernamefb);
 				user.setUsuario_id_fb(usidfb);
 				user.setRatio(Float.parseFloat(ratio));
 				perfil.add(user);
+				
 			}
 
 		} catch (Exception e) {
@@ -170,20 +170,11 @@ public boolean verificaIDexistente(String testaIdFb) throws Exception {
 	}
 	
 	public void Laique(String idpralaique) throws Exception{
-		//Date dt = new Date();
-		//Long atual = dt.getTime();
-		//nume += 20000;
-		//System.out.println("antigo+inc: "+nume);
-		//System.out.println("novo: "+atual);
-		
-		//if(nume < atual){
 		
 		try {
 		open();
-				
 		CallableStatement cstmt = con.prepareCall("{call laique(?)}");
 		cstmt.setString(1,idpralaique);
-		
 		rs = cstmt.executeQuery();
 		System.out.println("+1  para: "+idpralaique);
 		close();
@@ -191,9 +182,7 @@ public boolean verificaIDexistente(String testaIdFb) throws Exception {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//}else{
-			//System.out.println("você não pode clicar com frequencia. aguarde 20 segundos.");
-		//}
+
 		
 	}
 	

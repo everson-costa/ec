@@ -67,9 +67,9 @@ function atbt() {
 </script>
 
 </head>
-<%-- antigo+1:<%=antigo%> --%>
+
 <br/>
-atual<%=aux%><br/>
+<br/>
 <body onload="corrk(),inputs()">
  <a href="<%=request.getContextPath()%>/home" title="página inicial">rept!4</a><br/>
 
@@ -82,10 +82,10 @@ atual<%=aux%><br/>
 					username: ${usu.usuario_username_fb}<br/>
 <%-- 					<img src="http://graph.facebook.com/${usu.usuario_id_fb}/picture?type=large"/><br/> --%>
 					
-					<form onclick="disatbt()" action="<%=request.getContextPath()%>/Laique" method="post">
+					<form onclick="" action="<%=request.getContextPath()%>/Laique" method="post">
 						<input type="hidden" id="laique" name="laique" />
-<!-- 					<input type="submit" value="+R!"/> -->
-                        <input type="submit" value="R!" id ="btact1"  name="btact1" disabled="enabled"/>
+					<input type="submit" value="+R!"/>
+<!--                         <input type="submit" value="+R!" id ="btact1"  name="btact1" disabled="false"/> -->
 						<input type="text" id="num1" name="num1" value="<%=ctimes%>" />
 					</form>
 					
