@@ -1,8 +1,6 @@
 package control;
 
 import java.io.IOException;
-import java.util.Date;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,7 +26,6 @@ public class Laique extends HttpServlet {
 	      try{
 			UsuarioDao usdao;
 			usdao = new UsuarioDao();
-			//Long tempos = Long.parseLong(request.getParameter("num1"));
 			String idpralaique = request.getParameter("laique");
 			usdao.Laique(idpralaique);
 			RequestDispatcher view = request.getRequestDispatcher("WEB-INF/jsps/pagperfil.jsp?per="+idpralaique);

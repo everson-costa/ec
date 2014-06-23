@@ -3,7 +3,6 @@ package persistence;
 import java.sql.CallableStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 
@@ -152,13 +151,13 @@ public boolean verificaIDexistente(String testaIdFb) throws Exception {
 				String nome = rs.getString("u.usuario_nome_fb");
 				String usernamefb = rs.getString("u.usuario_username_fb");
 				String ratio = rs.getString("p.ratio");
+				
 				user.setUsuario_id_fb(usidfb);
 				user.setUsuario_nome_fb(nome);
 				user.setUsuario_username_fb(usernamefb);
 				user.setUsuario_id_fb(usidfb);
 				user.setRatio(Float.parseFloat(ratio));
 				perfil.add(user);
-				
 			}
 
 		} catch (Exception e) {
@@ -170,19 +169,19 @@ public boolean verificaIDexistente(String testaIdFb) throws Exception {
 	}
 	
 	public void Laique(String idpralaique) throws Exception{
-		
 		try {
 		open();
+				
 		CallableStatement cstmt = con.prepareCall("{call laique(?)}");
 		cstmt.setString(1,idpralaique);
+		
 		rs = cstmt.executeQuery();
-		System.out.println("+1  para: "+idpralaique);
+		
 		close();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 		
 	}
 	
@@ -194,7 +193,7 @@ public boolean verificaIDexistente(String testaIdFb) throws Exception {
 		cstmt.setString(1,idpraDeslaique);
 		
 		rs = cstmt.executeQuery();
-		System.out.println("-1  para: "+idpraDeslaique);
+		
 		close();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
