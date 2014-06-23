@@ -31,4 +31,4 @@
     </html>
 <!--   teste 2nd commit em master   -->
 
-http://thinkdiff.net/facebook/graph-api-javascript-base-facebook-connect-tutorial/
+<!-- http://thinkdiff.net/facebook/graph-api-javascript-base-facebook-connect-tutorial/ -->
