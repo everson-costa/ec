@@ -21,6 +21,9 @@
 <body>
 	<a href="<%=request.getContextPath()%>/home" title="Pagina Inicial">rept!</a>
 	<br />
+	 <div align="right">
+ <div class="fb-login-button" autologoutlink="true" data-show-faces="true" data-width="200" data-max-rows="1"></div>
+ </div>
 	<br />
 procurar perfil:
 	<form name="view" onsubmit="valida()" action="<%=request.getContextPath()%>/respesquisa" method="post">
@@ -29,6 +32,7 @@ procurar perfil:
 	</form>
 
 </body>
+<script type="text/javascript" src="<%=request.getContextPath()%>/scrir1"></script>
 </html>
 
 <!-- http://danielniko.wordpress.com/2012/04/17/simple-crud-using-jsp-servlet-and-mysql/ -->

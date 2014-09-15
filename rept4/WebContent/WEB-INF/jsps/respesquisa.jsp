@@ -13,11 +13,16 @@
 // 	}
 </script>
 
+
 </head>
 <body>
  <a href="<%=request.getContextPath()%>/home" title="página inicial">rept!4</a><br/>
 
 	<jsp:useBean id="dao" class="persistence.UsuarioDao"></jsp:useBean>
+		<br>
+		 <div align="right">
+ <div class="fb-login-button" autologoutlink="true" data-show-faces="true" data-width="200" data-max-rows="1"></div>
+ </div>
 		
 	<form name="flista" action="<%=request.getContextPath()%>/CntUser" method="get">
 			
@@ -43,7 +48,10 @@
 		</table>
 	
 	</form>
+
 </body>
+<script type="text/javascript" src="<%=request.getContextPath()%>/scrir1"></script>
+
 </html>
 
 <!-- http://danielniko.wordpress.com/2012/04/17/simple-crud-using-jsp-servlet-and-mysql/ -->
