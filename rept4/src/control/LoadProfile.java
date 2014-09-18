@@ -36,7 +36,7 @@ public class LoadProfile extends HttpServlet {
 		} else {
 			try {
 				
-				UsuarioDao usdao = new UsuarioDao();
+				UsuarioDao usdao = new UsuarioDao();  
 				request.setAttribute("usuario_id_fb", usdao.pegaPerfil(idperfil));
 				request.setAttribute("usuario_nome_fb",usdao.pegaPerfil(idperfil));
 				request.setAttribute("usuario_username_fb",usdao.pegaPerfil(idperfil));
