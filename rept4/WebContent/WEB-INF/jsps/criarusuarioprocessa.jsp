@@ -1,9 +1,9 @@
-<%@page import="javax.servlet.jsp.tagext.TryCatchFinally"%>
+<%-- <%@page import="javax.servlet.jsp.tagext.TryCatchFinally"%> --%>
 <%@page import="com.restfb.FacebookClient.AccessToken"%>
 <%@page import="com.restfb.DefaultWebRequestor"%>
-<%@ page import="java.util.*"%>
-<%@ page import="java.net.*"%>
-<%@ page import="com.restfb.*"%>
+<%@page import="java.util.*"%>
+<%@page import="java.net.*"%>
+<%@page import="com.restfb.*"%>
 <%@page import="com.restfb.types.*" %>
 <%@page import="com.restfb.DefaultFacebookClient" %>
 <%@page import="model.Usuario" %>
