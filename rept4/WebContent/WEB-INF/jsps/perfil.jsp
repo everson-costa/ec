@@ -49,7 +49,7 @@ function desativa(){
 </script>
 
 </head>
-<body onload="corrk(),inputs(),loaddadosusume()">
+<body onload="corrk(),inputs(),loaddadosusume(),checaLogado()">
  <a href="<%=request.getContextPath()%>/home" title="página inicial">rept!4</a><br/>
  <div align="right">
  <div class="fb-login-button" autologoutlink="true" data-show-faces="true" data-width="200" data-max-rows="1"></div>
@@ -60,7 +60,7 @@ function desativa(){
 					<h6>id:<span id="idfb" name="idfb">${usu.usuario_id_fb}</span></h6><br/>
 					<h3>${usu.usuario_nome_fb}</h3>Rank:<h2><span id="rk" name="rk">${usu.ratio}</span></h2><br/>
 					username: ${usu.usuario_username_fb}<br/>
-					<img src="http://graph.facebook.com/${usu.usuario_id_fb}/picture?type=large"/><br/>
+<%-- 					<img src="http://graph.facebook.com/${usu.usuario_id_fb}/picture?type=large"/><br/> --%>
 					
 					<form action="<%=request.getContextPath()%>/Laique" method="post" name="fr1" id="fr1" onsubmit="">
 						<input type="hidden" id="laique" name="laique"/>
