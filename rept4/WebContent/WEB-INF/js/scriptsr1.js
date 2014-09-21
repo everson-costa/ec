@@ -1,6 +1,7 @@
 /**EVERSON COSTA
  * 
  */
+var idLogado = false;
 
 //FUN. Básicas B - FUN. Básicas B - FUN. Básicas B - FUN. Básicas B - FUN. Básicas B - FUN. Básicas B - FUN. Básicas B
 //FUN. Básicas B - FUN. Básicas B - FUN. Básicas B - FUN. Básicas B - FUN. Básicas B - FUN. Básicas B - FUN. Básicas B
@@ -37,6 +38,7 @@ function corrk(){
 		FB.getLoginStatus(function(response) {
 			  if (response.status === 'connected') {
 				  var idfb = response.authResponse.userID;
+				  idLogado = true;
 			    //alert ("id do facebook:" + idfb);
 			  }
 			});
@@ -48,7 +50,8 @@ function corrk(){
 			  if (response.status === 'connected') {
 			    //alert("logado ok");
 				  var idfbme = response.authResponse.userID;
-				  document.getElementById("auxidfb").value=idfbme;
+				document.getElementById("auxidfb").value=idfbme;
+				idlogado = true;
 				// the user is logged in and has authenticated your
 			    // app, and response.authResponse supplies
 			    // the user's ID, a valid access token, a signed
@@ -62,6 +65,7 @@ function corrk(){
 				// FB.login();
 			  } else {
 			    // the user isn't logged in to Facebook.
+				  idLogado = false;
 				  FB.login();
 			  }
 			 });
@@ -69,8 +73,8 @@ function corrk(){
 	
 	function verIdLogado(){
 		//executado no submit do form laique e deslaique
-		 var logado = document.getElementById("auxidfb").value;
-		 if(logado==""){
+		//var logado = document.getElementById("auxidfb").value;
+		 if(idLogado==false){
 			 alert("Você ainda não entrou no Facebook.");
 			 return false;
 		 }else{
