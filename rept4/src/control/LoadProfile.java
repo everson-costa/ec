@@ -24,6 +24,7 @@ public class LoadProfile extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 		String idperfil = request.getParameter("loadperfil");
+		String idlogado = request.getParameter("auxidfb");
 		//System.out.println("pega o perfil"+idperfil);
 		if (idperfil.equalsIgnoreCase("") ||  //não permite pesquisar usando campo em branco, 1espaço, null, . , menor 2 caracteres
 				idperfil == null ||
@@ -34,12 +35,13 @@ public class LoadProfile extends HttpServlet {
 			System.out.println("vazio o campo informado");
 		} else {
 			try {
-				UsuarioDao usdao = new UsuarioDao();
+				
+				UsuarioDao usdao = new UsuarioDao();  
 				request.setAttribute("usuario_id_fb", usdao.pegaPerfil(idperfil));
 				request.setAttribute("usuario_nome_fb",usdao.pegaPerfil(idperfil));
 				request.setAttribute("usuario_username_fb",usdao.pegaPerfil(idperfil));
 				request.setAttribute("ratio",usdao.pegaPerfil(idperfil));
-				
+				request.setAttribute("idf",idlogado);
 				RequestDispatcher view = request.getRequestDispatcher("WEB-INF/jsps/perfil.jsp");
 				view.forward(request, response);
 

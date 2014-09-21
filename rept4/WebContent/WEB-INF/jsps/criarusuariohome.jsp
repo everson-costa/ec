@@ -20,17 +20,6 @@
 		}
 	</script>
 
-
-	<script type="text/javascript">(function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id))
-                    return;
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=608680442496976"; //VERIFICAR ESSA ID (É MINHA APLICÇÃO REPUTEIXON)
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));</script>
-
         <table border="1">
             <tr>
                 <td align="right" width="1024px">
@@ -56,4 +45,5 @@
             </tr>
         </table>
 </body>
+<script type="text/javascript" src="<%=request.getContextPath()%>/scrir1"></script>
 </html>
