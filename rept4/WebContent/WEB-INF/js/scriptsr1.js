@@ -37,7 +37,7 @@ function corrk(){
 	function getIDfb(){
 		FB.getLoginStatus(function(response) {
 			  if (response.status === 'connected') {
-				  var idfb = response.authResponse.userID;
+				  //var idfb = response.authResponse.userID;
 				  idLogado = true;
 			    //alert ("id do facebook:" + idfb);
 			  }
@@ -57,8 +57,8 @@ function corrk(){
 			    // the user's ID, a valid access token, a signed
 			    // request, and the time the access token 
 			    // and signed request each expire
-			    var uid = response.authResponse.userID;
-			    var accessToken = response.authResponse.accessToken;
+			   // var uid = response.authResponse.userID;
+			   // var accessToken = response.authResponse.accessToken;
 			  } else if (response.status === 'not_authorized') {
 			    // the user is logged in to Facebook, 
 			    // but has not authenticated your app
@@ -72,9 +72,11 @@ function corrk(){
 	}
 	
 	function verIdLogado(){
+		getIDfb();
 		//executado no submit do form laique e deslaique
 		//var logado = document.getElementById("auxidfb").value;
 		 if(idLogado==false){
+			 document.getElementById("auxidfb").value="";
 			 alert("Você ainda não entrou no Facebook.");
 			 return false;
 		 }else{
