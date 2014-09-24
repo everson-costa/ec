@@ -40,16 +40,18 @@ function corrk(){
 				  //var idfb = response.authResponse.userID;
 				  idLogado = true;
 			    //alert ("id do facebook:" + idfb);
+			  }else{
+				  idLogado = false;
+				  document.getElementById("auxidfb").value="";
 			  }
 			});
 	}
 	
 	function checaLogado(){
-		
 		FB.getLoginStatus(function(response) {
 			  if (response.status === 'connected') {
 			    //alert("logado ok");
-				  var idfbme = response.authResponse.userID;
+				var idfbme = response.authResponse.userID;
 				document.getElementById("auxidfb").value=idfbme;
 				idlogado = true;
 				// the user is logged in and has authenticated your
@@ -65,21 +67,36 @@ function corrk(){
 				// FB.login();
 			  } else {
 			    // the user isn't logged in to Facebook.
+				  document.getElementById("auxidfb").value="";
 				  idLogado = false;
 				  FB.login();
 			  }
-			 });
+			
+			 }); 
 	}
 	
 	function verIdLogado(){
 		getIDfb();
-		//executado no submit do form laique e deslaique
 		//var logado = document.getElementById("auxidfb").value;
 		 if(idLogado==false){
 			 document.getElementById("auxidfb").value="";
 			 alert("Você ainda não entrou no Facebook.");
+			 FB.login();
 			 return false;
 		 }else{
+			 atualizaPag();
 			 return true;
 		 }
 	}
+	
+	function atualizaPag(){
+		  FB.Event.subscribe("auth.login", function(response) {
+			   window.location.reload();
+			});
+	}
+	
+	function sairFb() {    
+		FB.logout(function (response) {
+		    window.location = "/facebook/logout/";
+		    atualizaPag();
+		});   }
