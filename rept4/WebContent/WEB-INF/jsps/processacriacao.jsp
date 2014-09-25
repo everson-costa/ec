@@ -6,17 +6,16 @@
 <%@page import="com.restfb.types.*" %>
 <%@page import="com.restfb.DefaultFacebookClient" %>
 <%@page import="model.Usuario" %>
-<%@ page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html" pageEncoding="iso-8859-1"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <title>rept4! processa criacao de perfil</title>
         
         <script type="text/javascript">
         window.onload = function(){
         	  document.forms['formcria'].submit();
-
         	}
         </script>
     </head>
@@ -70,7 +69,7 @@
                 <td>       NACIONALIDADE:</td><td><%=nacionalidade%></td>
             </tr>
             <tr>
-                <td>ANIVERS√ÅRIO:    </td><td><%=aniversario%></td>
+                <td>ANIVERS¡RIO:    </td><td><%=aniversario%></td>
             </tr>
             <tr>
                 <td>STATUS DE RELACIONAMENTO:    </td><td><%=estcivil%></td>
@@ -92,7 +91,7 @@
           <input type="text" name="idfb" id="idfb" value="<%=id%>" readonly="readonly"/>
           <input type="hidden" name="usuario_id_fb" id="usuario_id_fb" value="<%=id%>" readonly="readonly"/>  
           <br />
-          Nome do Usu√°rio ():
+          Nome do Usu·rio ():
           <input type="text" name="nome" id="nome" value="<%=nome%>" readonly="readonly"/>  
           <input type="hidden" name="usuario_nome_fb" id="usuario_nome_fb" value="<%=nome%>" readonly="readonly"/>
           <br />

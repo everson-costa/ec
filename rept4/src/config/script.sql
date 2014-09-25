@@ -47,3 +47,6 @@ CREATE TABLE test.`perfil` (
 --     END$$
 
 --CALL `test`.`deslaique`('100001988701789');
+
+------SQLS--------SQLS-----------SQLS-------------SQLS----------SQLS--------
+--SELECT count(*) as Total_Perfil,count(*) as TotalUsuarios from test.perfil as p left join test.usuario as u on p.usidfb = u.usuario_id_fb;

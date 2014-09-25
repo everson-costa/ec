@@ -7,11 +7,11 @@
 <%@page import="com.restfb.types.*" %>
 <%@page import="com.restfb.DefaultFacebookClient" %>
 <%@page import="model.Usuario" %>
-<%@ page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html" pageEncoding="iso-8859-1"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <title>rept4!</title>
     </head>
     <body>
@@ -75,7 +75,7 @@
           estcivil = usuario.getRelationshipStatus();
           
           }catch (Exception erro){
-  		   System.out.println("username: "+nomedeusuario+" n√£o encontrado. verifique se est√° correto."+erro);
+  		   System.out.println("username: "+nomedeusuario+" n„o encontrado. verifique se est· correto."+erro);
   		   request.getRequestDispatcher("WEB-INF/jsps/erro.jsp").forward(request,response);  
           }
            
@@ -141,7 +141,7 @@
                 <td>       NACIONALIDADE:</td><td><%=nacionalidade%></td>
             </tr>
             <tr>
-                <td>ANIVERS√ÅRIO:    </td><td><%=aniversario%></td>
+                <td>ANIVERS¡RIO:    </td><td><%=aniversario%></td>
             </tr>
             <tr>
                 <td>STATUS DE RELACIONAMENTO:    </td><td><%=estcivil%></td>
