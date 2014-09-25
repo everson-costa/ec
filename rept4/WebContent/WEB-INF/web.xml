@@ -68,12 +68,21 @@
   		<servlet-name>erro</servlet-name>
   		<url-pattern>/erro</url-pattern> <!-- Use this URL -->
   	</servlet-mapping>
-  		<servlet-mapping>
+  	<servlet-mapping>
   		<servlet-name>scrir1</servlet-name>
   		<url-pattern>/scrir1</url-pattern> <!-- Use this URL -->
   	</servlet-mapping>
   	<servlet>
 		<servlet-name>scrir1</servlet-name>
 		<jsp-file>/WEB-INF/js/scriptsr1.js</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+  		<servlet-name>cabec</servlet-name>
+  		<url-pattern>/cabec</url-pattern> <!-- Use this URL -->
+  	</servlet-mapping>
+  	<servlet>
+		<servlet-name>cabec</servlet-name>
+		<jsp-file>/WEB-INF/inc/header.jsp</jsp-file>
 	</servlet>
 </web-app>

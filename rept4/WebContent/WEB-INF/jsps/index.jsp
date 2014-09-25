@@ -7,11 +7,9 @@
     <title>rept!</title>  
     </head>  
     <body>
-    <a href="<%=request.getContextPath()%>/home" title="Página Inicial">rept!</a><br/><br/>
-      
-       <h3>página bem vindo teste</h3>     
+    <%@include file="../jsps/incs/header.jsp"%>
+       <h3>página bem vindo</h3>     
 <!--        <form action="EnviarDados?cmd=cadastrar" method="post">   -->
-         
 <!--           ID (): <input type="text" name="usuario_id_fb" />   -->
 <!--           <br /> -->
 <!--           Nome do Usuário (): <input type="text" name="usuario_nome_fb" id="usuario_nome_fb" />   -->
@@ -19,13 +17,12 @@
 <!--           Username (): <input type="text" name="usuario_username_fb" /> -->
 <!--           <br /><br />   -->
 <!--           <input type="submit" value="Cadastrar Pessoa" />   -->
-            
 <!--        </form> -->
        <a href="<%=request.getContextPath()%>/criar">criar um perfil</a>  
        <br /><br />  
        ${msg}<br/><br/>
        pesquisar usuarios:
-
+       
        <a href="<%=request.getContextPath()%>/respesquisa">link pesquisa</a>      
     </body>  
     </html>

@@ -8,6 +8,7 @@
 
     </head>
     <body>
+        <%@include file="../jsps/incs/header.jsp"%>
 	<script type="text/javascript">
 		function validaform() {
 			var urlinformada=document.forms["fomu"]["username"].value;
