@@ -53,27 +53,30 @@ function corrk(){
 			    //alert("logado ok");
 				var idfbme = response.authResponse.userID;
 				document.getElementById("auxidfb").value=idfbme;
+				 document.getElementById("btlogin").disabled = true;
+				 document.getElementById("btlogout").disabled = false;
 				idlogado = true;
 				// the user is logged in and has authenticated your
 			    // app, and response.authResponse supplies
 			    // the user's ID, a valid access token, a signed
 			    // request, and the time the access token 
 			    // and signed request each expire
-			   // var uid = response.authResponse.userID;
-			   // var accessToken = response.authResponse.accessToken;
+			    // var uid = response.authResponse.userID;
+			    // var accessToken = response.authResponse.accessToken;
 			  } else if (response.status === 'not_authorized') {
 			    // the user is logged in to Facebook, 
 			    // but has not authenticated your app
 				// FB.login();
 			  } else {
 			    // the user isn't logged in to Facebook.
+				  document.getElementById("btlogin").disabled = false;
+				  document.getElementById("btlogout").disabled = true;
 				  document.getElementById("auxidfb").value="";
 				  idLogado = false;
 				  loginFB();
 				  //FB.login();
 			  }
-			
-			 }); 
+			 });
 	}
 	
 	function verIdLogado(){
@@ -86,6 +89,7 @@ function corrk(){
 			 loginFB();
 			 return false;
 		 }else{
+			 
 			 atualizaPag();
 			 return true;
 		 }
