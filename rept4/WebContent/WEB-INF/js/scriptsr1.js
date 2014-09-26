@@ -69,7 +69,8 @@ function corrk(){
 			    // the user isn't logged in to Facebook.
 				  document.getElementById("auxidfb").value="";
 				  idLogado = false;
-				  FB.login();
+				  loginFB();
+				  //FB.login();
 			  }
 			
 			 }); 
@@ -81,7 +82,8 @@ function corrk(){
 		 if(idLogado==false){
 			 document.getElementById("auxidfb").value="";
 			 alert("Você ainda não entrou no Facebook.");
-			 FB.login();
+			 //FB.login();
+			 loginFB();
 			 return false;
 		 }else{
 			 atualizaPag();
@@ -95,8 +97,26 @@ function corrk(){
 			});
 	}
 	
-	function sairFb() {    
-		FB.logout(function (response) {
-		    window.location = "/facebook/logout/";
-		    atualizaPag();
-		});   }
+	function sairFB() { 
+		FB.logout(function(response) {
+			  // user is now logged out
+			window.location.reload();
+			//atualizaPag();
+	});
+	}
+	
+	function loginFB(){
+		FB.login(function(response) {
+			   if (response.authResponse) {
+			     console.log('Bem Vindo!  Fetching your information.... ');
+			     FB.api('/me', function(response) {
+			       console.log('Good to see you, ' + response.name + '.');
+			       window.location.reload();	
+			     });
+			     
+			   } else {
+			     console.log('User cancelled login or did not fully authorize.');
+			   }
+			 });
+		//atualizaPag();
+	}
