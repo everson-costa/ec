@@ -29,13 +29,13 @@
 					
 					<form onsubmit="return verIdLogado()" action="<%=request.getContextPath()%>/Laique" method="post" name="fr1" id="fr1">
 						<input type="hidden" id="laique" name="laique"/>
-						<input type="text" id="meuid" name="meuid"/>
+						<input type="hidden" id="meuid" name="meuid"/>
 						<input id="r1" name="r1" type="submit" value="+R!" onclick="desativa();"/>
 					</form>
 					
 					<form onsubmit="return verIdLogado()" action="<%=request.getContextPath()%>/DesLaique" method="post">
 						<input type="hidden" id="deslai" name="deslai" />
-						<input type="text" id="meuid2" name="meuid2"/>
+						<input type="hidden" id="meuid2" name="meuid2"/>
 						<input type="submit" value="-R!"/>
 					</form>
 			</c:forEach>
