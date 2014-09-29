@@ -66,9 +66,20 @@ uso:
 call test.checaLaique('100000931837382','100003181980842')
 
 
+
+
 ------SQLS--------SQLS-----------SQLS-------------SQLS----------SQLS--------
 --SELECT count(*) as Total_Perfil,count(*) as TotalUsuarios from test.perfil as p left join test.usuario as u on p.usidfb = u.usuario_id_fb;
 
+
+--ATIVAR AUTO EXECUCAO DE AGENDAMENTO
+SET GLOBAL event_scheduler = ON; (requer prilegios de root)
+
+--EVENTO COM TRUNCATE TABLE A CADA 10 SEG
+CREATE EVENT test.evento1
+    ON SCHEDULE EVERY 10 SECOND
+    DO
+      truncate table test.statslikeou;
 
 
 
