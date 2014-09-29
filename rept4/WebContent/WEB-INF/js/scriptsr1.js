@@ -42,7 +42,7 @@ function corrk(){
 			    //alert ("id do facebook:" + idfb);
 			  }else{
 				  idLogado = false;
-				  document.getElementById("auxidfb").value="";
+				  document.getElementById("meuidinfo").value="";
 			  }
 			});
 	}
@@ -52,7 +52,8 @@ function corrk(){
 			  if (response.status === 'connected') {
 			    //alert("logado ok");
 				var idfbme = response.authResponse.userID;
-				document.getElementById("auxidfb").value=idfbme;
+				document.getElementById("meuid").value=idfbme;
+				document.getElementById("meuid2").value=idfbme;
 				 document.getElementById("btlogin").disabled = true;
 				 document.getElementById("btlogout").disabled = false;
 				idlogado = true;
@@ -71,7 +72,8 @@ function corrk(){
 			    // the user isn't logged in to Facebook.
 				  document.getElementById("btlogin").disabled = false;
 				  document.getElementById("btlogout").disabled = true;
-				  document.getElementById("auxidfb").value="";
+				  document.getElementById("meuidinfo").value="";
+				  
 				  idLogado = false;
 				  loginFB();
 				  //FB.login();
@@ -83,7 +85,7 @@ function corrk(){
 		getIDfb();
 		//var logado = document.getElementById("auxidfb").value;
 		 if(idLogado==false){
-			 document.getElementById("auxidfb").value="";
+			 document.getElementById("meuidinfo").value="";
 			 alert("Você ainda não entrou no Facebook.");
 			 //FB.login();
 			 loginFB();

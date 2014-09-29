@@ -18,9 +18,13 @@
 
 	<jsp:useBean id="dao" class="persistence.UsuarioDao"></jsp:useBean>
 	<%String idfbload = request.getParameter("per");%>
+	<%String meuid = request.getParameter("meuid");%>
+	<%String meuid2 = request.getParameter("meuid2");%>
 	
 	<form name="perf" action="<%=request.getContextPath()%>/LoadProfile" method="get">
 			<input type="hidden" name="loadperfil" id="loadperfil" value="<%=idfbload%>"/>
+			<input type="hidden" name="meuid" id="meuid" value="<%=meuid%>"/>
+			<input type="hidden" name="meuid2" id="meuid2" value="<%=meuid2%>"/>
 		<input type="submit" value="ok" /><br/><br/>
 
 	</form>
