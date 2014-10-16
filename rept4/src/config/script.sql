@@ -22,6 +22,13 @@ CREATE TABLE test.`perfil` (
         REFERENCES usuario(usuario_id_fb)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
+CREATE TABLE test.`stats` (
+  `idlogado` varchar(20),
+  `likeou` varchar(20) DEFAULT NULL,
+`deslikeou` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 --
 --update test.perfil set perlikes = perlikes +1 where usidfb like '221005259400074';
 --select * from test.perfil;
@@ -48,5 +55,36 @@ CREATE TABLE test.`perfil` (
 
 --CALL `test`.`deslaique`('100001988701789');
 
+
+DELIMITER $$
+CREATE PROCEDURE test.validaDesLaique ( checaidlogado VARCHAR(20),  checaidlikeado VARCHAR(20) )
+    BEGIN    
+    insert into test.statslikeou set idlogado = checaidlogado, likeou = checaidlikeado;
+END $$
+
+uso:
+call test.checaLaique('100000931837382','100003181980842')
+
+
+
+
 ------SQLS--------SQLS-----------SQLS-------------SQLS----------SQLS--------
 --SELECT count(*) as Total_Perfil,count(*) as TotalUsuarios from test.perfil as p left join test.usuario as u on p.usidfb = u.usuario_id_fb;
+
+
+--ATIVAR AUTO EXECUCAO DE AGENDAMENTO
+SET GLOBAL event_scheduler = ON; (requer prilegios de root)
+
+--EVENTO COM TRUNCATE TABLE A CADA 10 SEG
+CREATE EVENT test.evento1
+    ON SCHEDULE EVERY 10 SECOND
+    DO
+      truncate table test.statslikeou;
+
+
+
+
+
+
+
+

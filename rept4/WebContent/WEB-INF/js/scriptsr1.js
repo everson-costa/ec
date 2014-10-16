@@ -42,7 +42,7 @@ function corrk(){
 			    //alert ("id do facebook:" + idfb);
 			  }else{
 				  idLogado = false;
-				  document.getElementById("auxidfb").value="";
+				  document.getElementById("meuidinfo").value="";
 			  }
 			});
 	}
@@ -52,38 +52,46 @@ function corrk(){
 			  if (response.status === 'connected') {
 			    //alert("logado ok");
 				var idfbme = response.authResponse.userID;
-				document.getElementById("auxidfb").value=idfbme;
+				document.getElementById("meuid").value=idfbme;
+				document.getElementById("meuid2").value=idfbme;
+				 document.getElementById("btlogin").disabled = true;
+				 document.getElementById("btlogout").disabled = false;
 				idlogado = true;
 				// the user is logged in and has authenticated your
 			    // app, and response.authResponse supplies
 			    // the user's ID, a valid access token, a signed
 			    // request, and the time the access token 
 			    // and signed request each expire
-			   // var uid = response.authResponse.userID;
-			   // var accessToken = response.authResponse.accessToken;
+			    // var uid = response.authResponse.userID;
+			    // var accessToken = response.authResponse.accessToken;
 			  } else if (response.status === 'not_authorized') {
 			    // the user is logged in to Facebook, 
 			    // but has not authenticated your app
 				// FB.login();
 			  } else {
 			    // the user isn't logged in to Facebook.
-				  document.getElementById("auxidfb").value="";
+				  document.getElementById("btlogin").disabled = false;
+				  document.getElementById("btlogout").disabled = true;
+				  document.getElementById("meuidinfo").value="";
+				  
 				  idLogado = false;
-				  FB.login();
+				  loginFB();
+				  //FB.login();
 			  }
-			
-			 }); 
+			 });
 	}
 	
 	function verIdLogado(){
 		getIDfb();
 		//var logado = document.getElementById("auxidfb").value;
 		 if(idLogado==false){
-			 document.getElementById("auxidfb").value="";
+			 document.getElementById("meuidinfo").value="";
 			 alert("Você ainda não entrou no Facebook.");
-			 FB.login();
+			 //FB.login();
+			 loginFB();
 			 return false;
 		 }else{
+			 
 			 atualizaPag();
 			 return true;
 		 }
@@ -95,8 +103,26 @@ function corrk(){
 			});
 	}
 	
-	function sairFb() {    
-		FB.logout(function (response) {
-		    window.location = "/facebook/logout/";
-		    atualizaPag();
-		});   }
+	function sairFB() { 
+		FB.logout(function(response) {
+			  // user is now logged out
+			window.location.reload();
+			//atualizaPag();
+	});
+	}
+	
+	function loginFB(){
+		FB.login(function(response) {
+			   if (response.authResponse) {
+			     console.log('Bem Vindo!  Fetching your information.... ');
+			     FB.api('/me', function(response) {
+			       console.log('Good to see you, ' + response.name + '.');
+			       window.location.reload();	
+			     });
+			     
+			   } else {
+			     console.log('User cancelled login or did not fully authorize.');
+			   }
+			 });
+		//atualizaPag();
+	}

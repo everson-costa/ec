@@ -12,7 +12,12 @@
 <body onload="corrk(),inputs(),checaLogado()">
  <a href="<%=request.getContextPath()%>/home" title="página inicial">rept!4</a><br/>
  <div align="right">
- <div class="fb-login-button" autologoutlink="true" data-show-faces="true" data-width="200" data-max-rows="1" onlogin="atualizaPag()"></div>
+<!--  <div class="fb-login-button" autologoutlink="true" data-show-faces="true" data-width="200" data-max-rows="1"></div> -->
+  <br/>
+  
+<input type="button" id="btlogin" name="btlogin" onclick="loginFB()" value="Entrar"/>
+ <br/>
+<input type="button" id="btlogout" name="btlogout" onclick="sairFB()" value="Sair"/>
  </div>
 <jsp:useBean id="dao" class="persistence.UsuarioDao"></jsp:useBean>
 	Pessoal<br/>
@@ -24,11 +29,13 @@
 					
 					<form onsubmit="return verIdLogado()" action="<%=request.getContextPath()%>/Laique" method="post" name="fr1" id="fr1">
 						<input type="hidden" id="laique" name="laique"/>
+						<input type="hidden" id="meuid" name="meuid"/>
 						<input id="r1" name="r1" type="submit" value="+R!" onclick="desativa();"/>
 					</form>
 					
 					<form onsubmit="return verIdLogado()" action="<%=request.getContextPath()%>/DesLaique" method="post">
 						<input type="hidden" id="deslai" name="deslai" />
+						<input type="hidden" id="meuid2" name="meuid2"/>
 						<input type="submit" value="-R!"/>
 					</form>
 			</c:forEach>
@@ -37,7 +44,7 @@
 				<br/>
 				<center>
 				Suas informações:<br/>
-				Nome de usuário (Facebook):<input type="text" id="auxidfb" name="auxidfb" />
+				Nome de usuário (Facebook):<input type="text" id="meuidinfo" name="meuidinfo" />
 				ID(Facebook):<input type="text" id="auxnomefb" name="auxnomefb" />??????
 				</center>
 				

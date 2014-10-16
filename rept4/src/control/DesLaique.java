@@ -1,6 +1,7 @@
 package control;
 
 import java.io.IOException;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,8 +27,9 @@ public class DesLaique extends HttpServlet {
 	      try{
 			UsuarioDao usdao;
 			usdao = new UsuarioDao();
+			String idlogou = request.getParameter("meuid2");
 			String idpraDeslaique = request.getParameter("deslai");
-			usdao.DesLaique(idpraDeslaique);
+			usdao.DesLaique(idlogou,idpraDeslaique);
 			RequestDispatcher view = request.getRequestDispatcher("WEB-INF/jsps/pagperfil.jsp?per="+idpraDeslaique);
 			view.forward(request, response);
 	      }catch (Exception e) {  

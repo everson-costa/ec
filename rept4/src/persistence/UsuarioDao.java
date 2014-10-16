@@ -5,9 +5,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
 import model.Usuario;
 
 public class UsuarioDao extends Dao {
@@ -168,16 +165,40 @@ public boolean verificaIDexistente(String testaIdFb) throws Exception {
 
 	}
 	
-	public void Laique(String idpralaique) throws Exception{
+	public void Laique(String uslogado,String idlike) throws Exception{
 		try {
 		open();
-				
-		CallableStatement cstmt = con.prepareCall("{call laique(?)}");
-		cstmt.setString(1,idpralaique);
 		
-		rs = cstmt.executeQuery();
+		String sqlQnts = "select idlogado, likeou from test.statslikeou where idlogado like ? and likeou like ?";
 		
+		pstmt = con.prepareStatement(sqlQnts);
+		pstmt.setString(1,uslogado);
+		pstmt.setString(2,idlike);
+		
+		rs = pstmt.executeQuery();
+		
+		int qnts = 0;
+		rs.last();
+		qnts = rs.getRow();
+		rs.beforeFirst();
+		
+		if(qnts <= 0){
+			CallableStatement cstmt2 = con.prepareCall("{call validaLaique(?,?)}");
+			cstmt2.setString(1,uslogado);
+			cstmt2.setString(2,idlike);
+			rs = cstmt2.executeQuery();
+			
+			CallableStatement cstmt = con.prepareCall("{call laique(?)}");
+			cstmt.setString(1,idlike);
+			rs = cstmt.executeQuery();
+		}else{
+			System.out.println("Você não pode R+ com Tanta frequencia. Tente mais tarde.");
+		}
+		
+		//System.out.println("Qntregs: "+qnts+" |dados: IDLOGADO:"+uslogado+" _IDPRALAIQUE: "+idlike);
+	
 		close();
+		
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -185,14 +206,36 @@ public boolean verificaIDexistente(String testaIdFb) throws Exception {
 		
 	}
 	
-	public void DesLaique(String idpraDeslaique) throws Exception{
+	public void DesLaique(String idlogado, String idpraDeslaique) throws Exception{
 		try {
 		open();
+			
+		String sqlQnts = "select idlogado, deslikeou from test.logdeslikes where idlogado like ? and deslikeou like ?";
+				
+		pstmt = con.prepareStatement(sqlQnts);
+		pstmt.setString(1,idlogado);
+		pstmt.setString(2,idpraDeslaique);
+		
+		rs = pstmt.executeQuery();
+		
+		int qnts = 0;
+		rs.last();
+		qnts = rs.getRow();
+		rs.beforeFirst();
+		
+		if(qnts <= 0){
+			CallableStatement cstmt2 = con.prepareCall("{call validaDesLaique(?,?)}");
+			cstmt2.setString(1,idlogado);
+			cstmt2.setString(2,idpraDeslaique);
+			rs = cstmt2.executeQuery();
 				
 		CallableStatement cstmt = con.prepareCall("{call deslaique(?)}");
 		cstmt.setString(1,idpraDeslaique);
 		
 		rs = cstmt.executeQuery();
+		}else{
+			System.out.println("Você não pode R- com Tanta frequencia. Tente mais tarde.");
+		}
 		
 		close();
 		} catch (Exception e) {
@@ -204,13 +247,4 @@ public boolean verificaIDexistente(String testaIdFb) throws Exception {
 	
 	
 }
-//teste subindo pelo prpduz
-//teste subindo pelo prpduz
-//teste subindo pelo prpduz
-//teste subindo pelo prpduz
-//teste subindo pelo prpduz
-//teste subindo pelo prpduz
-//teste subindo pelo prpduz
-//teste subindo pelo prpduz
-//teste subindo pelo prpduz
-//teste subindo pelo prpduz
+
