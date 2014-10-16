@@ -158,8 +158,5 @@
            <form action="<%=request.getContextPath()%>/processamento?par=<%=username%>" method="post">
            <input type="submit" value="ok"/> 
            </form>
-           
-                 
-      
 </body>
 </html>
