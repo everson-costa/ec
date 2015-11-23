@@ -23,6 +23,6 @@
        ${msg}<br/><br/>
        pesquisar usuarios:
        
-       <a href="<%=request.getContextPath()%>/respesquisa">link pesquisa2</a>      
+       <a href="<%=request.getContextPath()%>/respesquisa">link pesquisa</a>      
     </body>  
     </html>
